@@ -17,14 +17,16 @@ const stack = createStackNavigator();
     return(
         <>
        
-       <StatusBarC/>
+   
     <NavigationContainer independent={true}>
+    <StatusBarC/>
         <stack.Navigator>
-        <stack.Screen name="Home" component={Home}  options={{headerShown:false}}/>
+            <stack.Screen name="Home" component={Home}  options={{headerShown:false}}/>
+      
             <stack.Screen name="Welcome" component={Welcome}  options={{headerShown:false}}/>
             <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
             <stack.Screen name="Register" component={Register}  options={{headerShown:false}}/>
-           
+         
         </stack.Navigator>
     </NavigationContainer>
     </>

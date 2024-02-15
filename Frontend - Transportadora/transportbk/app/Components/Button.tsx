@@ -3,6 +3,7 @@ import styles from "../css/global";
 import { Feather } from "@expo/vector-icons";
 import { useNavigation } from "expo-router";
 
+
 function Button ({text, colorText, func, size, width, top, backgroundColor}){
     const navigation = useNavigation()
     return(

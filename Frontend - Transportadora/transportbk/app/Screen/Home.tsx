@@ -2,20 +2,21 @@ import React, {useState} from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import styles from "../css/global";
 import { FlatList } from "react-native-gesture-handler";
+import { Feather } from "@expo/vector-icons";
 
 export default function Home(){
     const DATA = [
         {
-          id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+          id: '1',
           title: 'Produtos entregues',
         },
         {
-          id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+          id: '2',
           title: 'Produtos a entregar',
         },
         {
-          id: '58694a0f-3da1-471f-bd96-145571e29d72',
-          title: 'Produtos teste',
+          id: '3',
+          title: 'Produtos com Defeitos',
         },
       ];
       
@@ -24,6 +25,7 @@ export default function Home(){
       const Item = ({title}: ItemProps) => (
         <View style={{backgroundColor:"#009898", marginTop:50, width:250, height:100, justifyContent:"center", alignItems:"center"}}>
           <Text style={{color:"white"}}>{title}</Text>
+          <Feather name="box" color={"white"} size={40}/>
         </View>
       )
     return(

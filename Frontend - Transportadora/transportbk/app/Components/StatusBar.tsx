@@ -1,7 +1,7 @@
 
-import { StatusBar } from 'expo-status-bar';
+
 import React, {useState} from 'react';
-import { StatusBarStyle } from 'react-native';
+import { StatusBar  } from 'react-native';
 
 const STYLES = ['default', 'dark-content', 'light-content'] as const;
 const TRANSITIONS = ['fade', 'slide', 'none'] as const;
