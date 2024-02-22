@@ -19,6 +19,26 @@ const styles = StyleSheet.create({
         width:"50%",
         height:100
     },
+    card:{
+        width:"80%",
+        height:80,
+        backgroundColor:"#252525",
+        display:"flex",
+        alignItems:"center",
+        padding:10,
+        marginBottom:20
+        
+    },
+    item:{
+        backgroundColor:"#009898", 
+        marginTop:50, 
+        width:200, 
+        height:80, 
+        justifyContent:"center",
+        alignItems:"center",
+        flexDirection:"column",
+        padding:10
+    },
     button:{
        
         width:250,
@@ -33,6 +53,23 @@ const styles = StyleSheet.create({
         flexDirection:"row"
         
         
+    },
+    containerInfo:{
+        borderWidth:2, 
+        borderBottomColor:"#009898",
+        width:"95%", 
+        position:"absolute",
+        top:5, 
+        padding:5,
+        height:90, 
+        flexDirection:"row",
+        display:"flex", 
+        alignItems:"center", 
+        padding:20
+    },
+    text:{
+        color:"white",
+        fontSize:20
     },
     input:{
         width:250,

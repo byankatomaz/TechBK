@@ -7,7 +7,7 @@ import Login from "./Screen/Login";
 import StatusBarC from "./Components/StatusBar";
 import Register from "./Screen/Resgister";
 import Home from "./Screen/Home";
-
+import Requests from './Screen/Requests' 
 const stack = createStackNavigator();
 
 
@@ -19,13 +19,15 @@ const stack = createStackNavigator();
        
    
     <NavigationContainer independent={true}>
-    <StatusBarC/>
+   
         <stack.Navigator>
-            <stack.Screen name="Home" component={Home}  options={{headerShown:false}}/>
-      
+          
+        <stack.Screen name="Home" component={Home}  options={{headerShown:false}}/>
             <stack.Screen name="Welcome" component={Welcome}  options={{headerShown:false}}/>
             <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
             <stack.Screen name="Register" component={Register}  options={{headerShown:false}}/>
+          
+            <stack.Screen name="Requests" component={Requests}  options={{headerShown:false}}/>
          
         </stack.Navigator>
     </NavigationContainer>
