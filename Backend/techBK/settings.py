@@ -37,6 +37,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    
+    'djoser',
+    'rest_framework',
+    'django_filters',
+    'rest_framework.authtoken',
+    'stdimage',
+    'drf_yasg',
+    'corsheaders',
+    
+    'APPS.TechBK',
+    'APPS.Transporte'
 ]
 
 MIDDLEWARE = [
@@ -47,6 +58,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "http://localhost:5173", 
+    "exp://192.168.1.230:8081", 
+    "http://localhost:19006"
 ]
 
 ROOT_URLCONF = 'techBK.urls'
@@ -75,8 +95,11 @@ WSGI_APPLICATION = 'techBK.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'techbk',
+        'USER': 'root',
+        'HOST': 'localhost',
+        'PORT': '3306',
     }
 }
 
@@ -103,9 +126,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
