@@ -26,7 +26,19 @@ const styles = StyleSheet.create({
         display:"flex",
         alignItems:"center",
         padding:10,
-        marginBottom:20
+        marginBottom:20,
+        borderRadius:7,
+        
+    },
+    cards:{
+        width:"100%",
+        height:"50%",
+    
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"flex-start",
+        padding:10
+       
         
     },
     item:{
