@@ -6,12 +6,6 @@ import Button from "../Components/Button";
 import StatusBarC from "../Components/StatusBar";
 
 
-
-
-
- 
-
-
 export default function Welcome({navigation}){
    
    

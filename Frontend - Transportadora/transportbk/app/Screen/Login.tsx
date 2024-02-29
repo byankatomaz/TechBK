@@ -18,8 +18,8 @@ export default function Login(){
             </View>
 
             <View>
-               <Input placeholder={"Digite seu usuario: "}/>
-               <Input placeholder={"Digite sua senha: "}/>
+               <Input placeholder={"Digite seu usuario: "} bgColor={"white"}/>
+               <Input placeholder={"Digite sua senha: "} bgColor={"white"}/>
             </View>
             <View>
                 <Button size={0} text={"Não possui login? Cadastre-se"} colorText={"white"} func={"Register"} backgroundColor={"transparent"} width={250} top={20}/>

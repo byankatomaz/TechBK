@@ -18,9 +18,9 @@ export default function Register(){
             </View>
 
             <View>
-               <Input placeholder={"Digite seu email: "}/>
-               <Input placeholder={"Digite seu número: "}/>
-               <Input placeholder={"Digite sua senha: "}/>
+               <Input placeholder={"Digite seu email: "} bgColor={"white"}/>
+               <Input placeholder={"Digite seu número: "} bgColor={"white"}/>
+               <Input placeholder={"Digite sua senha: "} bgColor={"white"}/>
             </View>
            
             <Button size={0} text={"Registrar"} colorText={"white"} func={""} width={150} top={40}/>

@@ -3,12 +3,13 @@ import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "../css/global";
 import { FlatList } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
-import logo from './../../assets/images/logo.png';
+
 import StatusBarC from "../Components/StatusBar";
+import ContainerInfo from "../Components/ContainerInfo";
 
 
 export default function Home({navigation}){
-    const [iconUser, setIconUser] = useState<String>("user");
+   
   
     const DATA = [
         {
@@ -19,12 +20,13 @@ export default function Home({navigation}){
         },
         {
           id: '2',
-          title: 'Pedidos feitos',
-          icon:'check-square'
+          title: 'Entregas feitas',
+          icon:'check-square',
+          screen:"DeliveryDone",
         },
         {
           id: '3',
-          title: 'Logistica Pedidos',
+          title: 'Logistica entregas',
           icon:'bar-chart-2'
         },
       ];
@@ -44,19 +46,7 @@ export default function Home({navigation}){
         <>
         <StatusBarC/>
         <View style={styles.container}>
-        <View style={styles.containerInfo}>
-        <TouchableOpacity>
-            <View style={{width:65, height:68, borderRadius:30,  display:"flex", alignItems:"center"}}>
-  
-                {iconUser == "user" ? <Feather name="user" size={55} color={'white'}/>: <Image source={logo} style={styles.logoImage}/>}
-              
-            </View>
-            </TouchableOpacity>
-
-            <View style={{marginLeft:14}}>
-              <Text style={styles.text}>Olá Keven!</Text>
-            </View>
-        </View>
+        <ContainerInfo text={"Olá Keven!"} icon={"user"}/>
         <View style={{ width:"60%",position:"absolute", top:150,  alignItems:"center"}}>
             <FlatList  data={DATA}
             renderItem={
