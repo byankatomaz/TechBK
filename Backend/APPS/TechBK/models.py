@@ -1,6 +1,4 @@
-from typing import Any
 from django.db import models
-from stdimage.models import StdImageField
 
 from django.contrib.auth.models import AbstractUser, BaseUserManager
 import uuid
@@ -48,6 +46,19 @@ class Base(AbstractUser):
         abstract = True
         
 
+class Endereco(models.Model):
+    
+    rua = models.CharField(max_length=250, blank=False, null=False)
+    bairro = models.CharField(max_length=100, null=False)
+    cidade = models.CharField(max_length=100, null=False)
+    estado = models.CharField(max_length=30, null=False)
+    num = models.IntegerField(null=True)
+    cep = models.IntegerField(null=True)
+    
+    def __str__(self):
+        return f"{self.rua}, {self.num}, {self.bairro}, {self.cidade}, {self.estado}, {self.cep}"
+
+
 class Cliente(Base):
     
     TIPO_CHOICES = [
@@ -58,17 +69,23 @@ class Cliente(Base):
     nome = models.CharField('Nome', max_length=100)
     email = models.EmailField('E-mail', unique=True)
     cpf = models.CharField('CPF', max_length=11)
-    tipo = models.CharField('Tipo', max_length=2, choices=TIPO_CHOICES)
+    tipo = models.CharField('Tipo', max_length=5, choices=TIPO_CHOICES)
     
-    rua = models.CharField(max_length=250, blank=False, null=False)
-    bairro = models.CharField(max_length=100, null=False)
-    cidade = models.CharField(max_length=100, null=False)
-    estado = models.CharField(max_length=30, null=False)
-    num = models.IntegerField(null=True)
-    cep = models.IntegerField(null=True)
+    endereco = models.ForeignKey(Endereco, on_delete=models.CASCADE, related_name='clientes')
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['nome', 'cpf', 'tipo', 'rua', 'bairro', 'cidade', 'estado', 'num', 'cep', 'ativo']
+    
+    objects = ClienteManager()
+    
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='cliente_groups'  # Nome personalizado para o accessor inverso
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        related_name='cliente_user_permissions'  # Nome personalizado para o accessor inverso
+    )
     
     class Meta:
         verbose_name = 'Cliente'
@@ -79,4 +96,4 @@ class Cliente(Base):
     def __str__(self):
         return self.email
     
-    objects = ClienteManager()
+  

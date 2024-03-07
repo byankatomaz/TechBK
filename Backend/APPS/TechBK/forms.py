@@ -6,12 +6,12 @@ class ClienteCreateForm(UserCreationForm):
     
     class Meta:
         model = Cliente
-        fields = ['nome', 'email', 'cpf', 'tipo', 'rua', 'bairro', 'cidade', 'estado', 'num', 'cep', 'ativo']
+        fields = ['nome', 'email', 'cpf', 'tipo', 'endereco', 'ativo']
 
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(self.cleaned_data['password1'])
-        user.email = self.cleaned_data['email']  # Corrigido aqui
+        user.email = self.cleaned_data['email']
         
         if commit:
             user.save()
@@ -24,4 +24,4 @@ class ClienteChangeForm(UserChangeForm):
     
     class Meta:
         model = Cliente
-        fields = ['nome', 'cpf', 'tipo', 'rua', 'bairro', 'cidade', 'estado', 'num', 'cep', 'ativo']
+        fields = ['nome', 'cpf', 'tipo', 'endereco', 'ativo']

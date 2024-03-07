@@ -10,16 +10,17 @@ class ClienteAdmin(UserAdmin):
     form = ClienteChangeForm
     model = Cliente
     
-    list_display = ('nome', 'email', 'cpf', 'tipo', 'rua', 'bairro', 'cidade', 'estado', 'num', 'cep', 'date_joined', 'ativo')
+    list_display = ('nome', 'email', 'cpf', 'endereco', 'date_joined', 'ativo')
     readonly_fields = ('modificacao',)
 
     fieldsets = (
         (None, {'fields': ('email', 'password')}),
         ('Informações Pessoais', {'fields': ('nome', 'cpf', 'tipo')}),
-        ('Endereço', {'fields': ('rua', 'bairro', 'cidade', 'estado', 'num', 'cep')}),
+        ('Endereço', {'fields': ('endereco',)}),
         ('Permissões', {'fields': ('ativo', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Datas Importantes', {'fields': ('date_joined', 'modificacao')}),
     )
 
     list_filter = ('is_staff', 'is_superuser', 'ativo')
+
   
