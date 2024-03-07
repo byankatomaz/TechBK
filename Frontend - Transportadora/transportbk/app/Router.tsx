@@ -9,6 +9,7 @@ import Register from "./Screen/Resgister";
 import Home from "./Screen/Home";
 import Requests from './Screen/Requests' 
 import DeliveryDone from "./Screen/DeliveryDone";
+import TechBkProvider from "./context/TechBkContext";
 const stack = createStackNavigator();
 
 
@@ -17,22 +18,18 @@ const stack = createStackNavigator();
   
     return(
         <>
-       
-   
     <NavigationContainer independent={true}>
-   
+        <TechBkProvider>
         <stack.Navigator>
-        <stack.Screen name="Welcome" component={Welcome}  options={{headerShown:false}}/>
         <stack.Screen name="DeliveryDone" component={DeliveryDone}  options={{headerShown:false}}/>
+        <stack.Screen name="Welcome" component={Welcome}  options={{headerShown:false}}/>
+      
         <stack.Screen name="Home" component={Home}  options={{headerShown:false}}/>
-         
-            <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
-            <stack.Screen name="Register" component={Register}  options={{headerShown:false}}/>
-          
-            <stack.Screen name="Requests" component={Requests}  options={{headerShown:false}}/>
-          
-         
+        <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
+        <stack.Screen name="Register" component={Register}  options={{headerShown:false}}/>
+        <stack.Screen name="Requests" component={Requests}  options={{headerShown:false}}/>
         </stack.Navigator>
+        </TechBkProvider>
     </NavigationContainer>
     </>
     )

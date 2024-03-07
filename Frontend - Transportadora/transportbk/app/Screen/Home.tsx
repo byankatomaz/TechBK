@@ -23,12 +23,8 @@ export default function Home({navigation}){
           title: 'Entregas feitas',
           icon:'check-square',
           screen:"DeliveryDone",
-        },
-        {
-          id: '3',
-          title: 'Logistica entregas',
-          icon:'bar-chart-2'
-        },
+        }
+       
       ];
       
       type ItemProps = {title: string};
@@ -47,7 +43,7 @@ export default function Home({navigation}){
         <StatusBarC/>
         <View style={styles.container}>
         <ContainerInfo text={"Olá Keven!"} icon={"user"}/>
-        <View style={{ width:"60%",position:"absolute", top:150,  alignItems:"center"}}>
+        <View style={{ width:"60%",position:"absolute",   alignItems:"center", justifyContent:"center"}}>
             <FlatList  data={DATA}
             renderItem={
                 ({item}) => 

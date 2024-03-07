@@ -19,8 +19,8 @@ const styles = StyleSheet.create({
         width:"50%",
         height:100
     },
-    card:{
-        width:"80%",
+    cardDetails:{
+        width:"100%",
         height:80,
         backgroundColor:"#252525",
         display:"flex",
@@ -33,13 +33,21 @@ const styles = StyleSheet.create({
     cards:{
         width:"100%",
         height:"50%",
-    
+        display:"flex",
+        alignItems:"center",
+        justifyContent:"flex-start",
+        gap:-50,
+
+       
+        
+    },
+    card:{
+        width:"100%",
+        height:"35%",
         display:"flex",
         alignItems:"center",
         justifyContent:"flex-start",
         padding:10
-       
-        
     },
     item:{
         backgroundColor:"#009898", 

@@ -1,9 +1,9 @@
-import { View, Text, TouchableOpacity } from "react-native"
+import { Text, View, TouchableOpacity } from "react-native"
 import styles from "../css/global"
-import { Feather } from "@expo/vector-icons"
-import { useState } from "react"
+import { useState } from "react";
+import { Feather } from "@expo/vector-icons";
+export default function Card({nome}:string){
 
-export default function Card({nome, codigo}:String){
     const [color, setColor] = useState<String>("red");
     const [countTouch, setCountTouch] =  useState<Number>(1);
     
@@ -20,7 +20,6 @@ export default function Card({nome, codigo}:String){
             case 2:
                 setColor("green");
                 break;
-
             case 3:
                 setColor("yellow");
                 break;
@@ -29,27 +28,19 @@ export default function Card({nome, codigo}:String){
                 break;
         }
     }
+    
     return(
-        <TouchableOpacity>
-            <View style={styles.card}>
-            <View style={{display:"flex", flexDirection:"row",  width:"100%",height:25, justifyContent:"center", bottom:10, borderBottomWidth:1, borderBottomColor:"#009898"}}>
-            <Text style={{color:"white", paddingRight:40}}>Nome</Text>
-            <Text style={{color:"white", paddingLeft:20}}>Código do produto</Text>
-            <Text style={{color:"white", paddingLeft:50}} >Status</Text>
-
-           
+        <View style={styles.card}>
+            <View style={{display:"flex", flexDirection:"row",  width:"52%",height:25, justifyContent:"space-between", bottom:10, borderBottomWidth:1, borderBottomColor:"#009898"}}>
+                <Text style={{color:"white"}}>Nome</Text>
+                <Text style={{color:"white", left:105}}>Status</Text>
             </View>
-            <View style={{display:"flex", flexDirection:"row"}}>
-            <Text style={{color:"white", paddingRight:40}}>{nome}</Text>
-            <Text style={{color:"white", paddingLeft:20}}>{codigo}</Text>
-            <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:nome == null?200:33}}>
-            <Feather name="square" color={color} size={25} />
-            </TouchableOpacity>
-         
+            <View style={{display:"flex", flexDirection:"row", width:310}}>
+                <Text style={{color:"white"}}>{nome}</Text>
+                <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:nome == null?260:33}}>
+                    <Feather name="square" color={color} size={25} />
+                </TouchableOpacity>
             </View>
-        </View>
-
-        </TouchableOpacity>
-       
+    </View>
     )
 }
