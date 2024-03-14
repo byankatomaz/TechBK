@@ -15,7 +15,7 @@ export default function Requests() {
 
                 <View style={styles.cards}>
                     <TouchableOpacity onPress={console.log("aaaaaa")}>
-                        <Card nome={"mARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                 </View>
                 </View>
