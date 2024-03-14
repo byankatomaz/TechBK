@@ -1,7 +1,8 @@
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import styles from "../css/global";
 import ContainerInfo from "../Components/ContainerInfo";
-import StatusBarC from "../Components/StatusBar";
+
+import StatusBar from "../Components/StatusBar";
 import Card from "../Components/Card";
 
 import Input from "../Components/Inputs";
@@ -20,7 +21,7 @@ export default function DeliveryDone() {
     };
     return (
         <>
-            <StatusBarC />
+            <StatusBar/>
             <View style={[styles.container]}>
                 <ContainerInfo text={"Entregas feitas"} icon={"check-square"} />
                 <View style={{ display: "flex", justifyContent: "flex-start", width: "80%", paddingBottom: 12, flexDirection: "row", marginBottom: 10 }}>

@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
+import { height, width } from "../Screen/Login";
 
 const styles = StyleSheet.create({
     container:{
-        flex: 1,
-        backgroundColor: '#fff',
+        height: height,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor:'black',
         padding:0,
         margin:0,
-        width:'100%'
+        width: width
 },
     logoImage:{
         width:"100%",

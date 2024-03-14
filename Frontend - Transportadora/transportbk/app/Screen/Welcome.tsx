@@ -3,7 +3,7 @@ import { View, Image ,} from "react-native";
 import styles from "../css/global";
 import logo from "./../../assets/images/logo.png";
 import Button from "../Components/Button";
-import StatusBarC from "../Components/StatusBar";
+import StatusBar from "../Components/StatusBar";
 
 
 export default function Welcome({navigation}){
@@ -11,7 +11,7 @@ export default function Welcome({navigation}){
    
     return(
         <>
-        <StatusBarC/>
+        <StatusBar/>
         <View style={styles.container}>
        
             <View style={styles.containerImg}>

@@ -4,7 +4,7 @@ import styles from "../css/global";
 import { FlatList } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
 
-import StatusBarC from "../Components/StatusBar";
+import StatusBar from "../Components/StatusBar";
 import ContainerInfo from "../Components/ContainerInfo";
 
 
@@ -40,7 +40,7 @@ export default function Home({navigation}){
       )
     return(
         <>
-        <StatusBarC/>
+        <StatusBar/>
         <View style={styles.container}>
         <ContainerInfo text={"Olá Keven!"} icon={"user"}/>
         <View style={{ width:"60%",position:"absolute",   alignItems:"center", justifyContent:"center"}}>
