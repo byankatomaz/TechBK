@@ -35,7 +35,7 @@ export default function Card({nome}:string){
                 <Text style={{color:"white"}}>Nome</Text>
                 <Text style={{color:"white", left:105}}>Status</Text>
             </View>
-            <View style={{display:"flex", flexDirection:"row", width:310}}>
+            <View style={{display:"flex", flexDirection:"row", width:310, height:100}}>
                 <Text style={{color:"white"}}>{nome}</Text>
                 <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:nome == null?260:33}}>
                     <Feather name="square" color={color} size={25} />
