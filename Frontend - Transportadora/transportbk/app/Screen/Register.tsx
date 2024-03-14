@@ -4,14 +4,14 @@ import styles from "../css/global";
 import logo from "./../../assets/images/logo.png";
 import Button from "../Components/Button";
 import Input from "../Components/Inputs";
-import StatusBarC from "../Components/StatusBar";
+import StatusBar from "../Components/StatusBar";
 
 
 
 export default function Register(){
     return(
         <>
-       <StatusBarC/>
+       <StatusBar/>
         <View style={styles.container}>
             <View style={styles.containerImg}>
                 <Image source={logo} style={[styles.logoImage, {bottom:100}]} />

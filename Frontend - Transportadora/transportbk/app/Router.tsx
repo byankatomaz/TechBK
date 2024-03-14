@@ -16,21 +16,22 @@ const stack = createStackNavigator();
   
   
     return(
-    <>
+   
         <NavigationContainer independent={true}>
             <TechBkProvider>
-            <stack.Navigator>
+            <stack.Navigator> 
+                <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
          
             <stack.Screen name="Welcome" component={Welcome}  options={{headerShown:false}}/>
             <stack.Screen name="DeliveryDone" component={DeliveryDone}  options={{headerShown:false}}/>
             <stack.Screen name="Home" component={Home}  options={{headerShown:false}}/>
-            <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
+          
             <stack.Screen name="Register" component={Register}  options={{headerShown:false}}/>
             <stack.Screen name="Requests" component={Requests}  options={{headerShown:false}}/>
             </stack.Navigator>
             </TechBkProvider>
         </NavigationContainer>
-    </>
+  
     )
     
 
