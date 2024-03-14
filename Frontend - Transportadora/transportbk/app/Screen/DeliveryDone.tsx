@@ -13,6 +13,8 @@ import { TechContext } from "../context/TechBkContext";
 export default function DeliveryDone() {
     const {visible, changeVisible}= useContext(TechContext)
 
+    
+
     const toggleModal = () => {
         changeVisible(true);
     };
@@ -29,13 +31,13 @@ export default function DeliveryDone() {
                 </View>
                 <View style={styles.cards}>
                     <TouchableOpacity onPress={toggleModal}>
-                        <Card nome={"mARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={toggleModal}>
-                        <Card nome={"mARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={toggleModal}>
-                        <Card nome={"mARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                 </View>
             <Modal visible={visible}/>
