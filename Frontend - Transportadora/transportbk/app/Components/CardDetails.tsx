@@ -1,7 +1,11 @@
 import { View, Text, TouchableOpacity } from "react-native"
 import styles from "../css/global"
 
-export default function CardDetails({nome, codigo}:String){
+interface CardDetailsProps{
+    nome: string,
+    codigo: string
+}
+export default function CardDetails({nome, codigo}:CardDetailsProps){
   
     return(
  
