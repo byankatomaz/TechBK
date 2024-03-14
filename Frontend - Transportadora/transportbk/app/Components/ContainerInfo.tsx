@@ -5,8 +5,7 @@ import React, { useState } from 'react'
 import logo from './../../assets/images/logo.png';
 
 const ContainerInfo = ({text, icon}:String) => {
-    console.log(icon)
-    const [iconUser, setIconUser] = useState<String>("user");
+    const [iconUser, setIconUser] = useState<string>("user");
   return (
     <View style={styles.containerInfo}>
         <TouchableOpacity>
