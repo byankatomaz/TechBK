@@ -2,19 +2,25 @@ import { Text, View, TouchableOpacity } from "react-native"
 import styles from "../css/global"
 import { useState } from "react";
 import { Feather } from "@expo/vector-icons";
-export default function Card({nome}:string){
+import React from "react";
 
-    const [color, setColor] = useState<String>("red");
-    const [countTouch, setCountTouch] =  useState<Number>(1);
+interface CardProps{
+    nome: string
+}
+
+export default function Card({nome}:CardProps){
+
+    const [color, setColor] = useState<string>("red");
+    const [countTouch, setCountTouch] =  useState<number>(1);
     
     const changeColor = () =>{
-        let n:Number = countTouch;
+        let n = countTouch;
         setCountTouch(n+=1);
         console.log(countTouch);
         countTouch == 3?setCountTouch(1):console.log("continue the same thing")
         change(n)
     }
-    const change = (n:Number)=>{
+    const change = (n:number)=>{
         switch(n){
             
             case 2:
