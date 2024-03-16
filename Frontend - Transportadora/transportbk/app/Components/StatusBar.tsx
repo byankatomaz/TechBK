@@ -1,19 +1,15 @@
+import React from 'react';
+import { StatusBar as RNStatusBar} from 'react-native';
 
-
-import React, {useState} from 'react';
-import { StatusBar  } from 'react-native';
-
-function StatusBarC(){
-   
-    return(
-
-    <StatusBar
-        animated={true}
-        backgroundColor="black"
-        barStyle={"ligth-content"}
-
-        hidden={false}
-      />
-    )
+function CustomStatusBar() {
+    return (
+        <RNStatusBar
+            animated={true}
+            backgroundColor="black"
+            barStyle="default"
+            hidden={false}
+        />
+    );
 }
-export default StatusBarC;
+
+export default CustomStatusBar;
