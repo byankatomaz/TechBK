@@ -1,10 +1,8 @@
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, TouchableOpacity } from "react-native";
 import styles from "../css/global";
 import ContainerInfo from "../Components/ContainerInfo";
-
-import StatusBar from "../Components/StatusBar";
 import Card from "../Components/Card";
-
+import React from "react";
 import Input from "../Components/Inputs";
 import { Feather } from "@expo/vector-icons";
 import { useContext, useState } from "react";
@@ -14,14 +12,11 @@ import { TechContext } from "../context/TechBkContext";
 export default function DeliveryDone() {
     const {visible, changeVisible}= useContext(TechContext)
 
-    
-
     const toggleModal = () => {
         changeVisible(true);
     };
+    
     return (
-        <>
-            <StatusBar/>
             <View style={[styles.container]}>
                 <ContainerInfo text={"Entregas feitas"} icon={"check-square"} />
                 <View style={{ display: "flex", justifyContent: "flex-start", width: "80%", paddingBottom: 12, flexDirection: "row", marginBottom: 10 }}>
@@ -41,9 +36,8 @@ export default function DeliveryDone() {
                         <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                 </View>
-            <Modal visible={visible}/>
+            <Modal isVisible={visible}/>
             </View>
-
-        </>
+      
     )
 }
