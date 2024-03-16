@@ -3,7 +3,7 @@ import { Feather } from '@expo/vector-icons'
 import styles from '../css/global'
 import React, { useState } from 'react'
 import logo from '../../assets/images/logo.png';
-import { IconProps } from '@expo/vector-icons/build/createIconSet';
+
 
 interface ContainerInfoProps{
   text: string,
