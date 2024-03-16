@@ -2,9 +2,15 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { Feather } from '@expo/vector-icons'
 import styles from '../css/global'
 import React, { useState } from 'react'
-import logo from './../../assets/images/logo.png';
+import logo from '../../assets/images/logo.png';
+import { IconProps } from '@expo/vector-icons/build/createIconSet';
 
-const ContainerInfo = ({text, icon}:String) => {
+interface ContainerInfoProps{
+  text: string,
+  icon: any
+}
+
+const ContainerInfo = ({text, icon}:ContainerInfoProps) => {
     const [iconUser, setIconUser] = useState<string>("user");
   return (
     <View style={styles.containerInfo}>
