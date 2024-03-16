@@ -1,4 +1,4 @@
-import {  PressableProps, Text, Pressable,View } from "react-native";
+import { PressableProps, Text, Pressable, View } from "react-native";
 import styles from "../css/global";
 import { Feather } from "@expo/vector-icons";
 import { IconProps } from "@expo/vector-icons/build/createIconSet";
@@ -11,10 +11,10 @@ interface CustomButtonProps extends PressableProps {
     size?: number;
     width?: number;
     top?: number;
-    iconName?:string
-  }
-  
-  const Button: React.FC<CustomButtonProps> = ({
+    iconName?: any
+}
+
+const Button: React.FC<CustomButtonProps> = ({
     text,
     backgroundColor,
     colorText,
@@ -23,20 +23,20 @@ interface CustomButtonProps extends PressableProps {
     top,
     iconName,
     ...rest
-  }) => {
+}) => {
     return (
-      <Pressable
-        {...rest}
-        style={[
-          styles.button,
-          { width: width, top: top, backgroundColor: backgroundColor || "#009898" },
-        ]}
-      >
-        <Text style={{ color: colorText }}>{text}</Text>
-        <View style={{ marginLeft: 10 }}>
-          <Feather name={iconName} color={"white"} size={size} />
-        </View>
-      </Pressable>
+        <Pressable
+            {...rest}
+            style={[
+                styles.button,
+                { width: width, top: top, backgroundColor: backgroundColor || "#009898" },
+            ]}
+        >
+            <Text style={{ color: colorText }}>{text}</Text>
+            <View style={{ marginLeft: 10 }}>
+                <Feather name={iconName} color={"white"} size={size} />
+            </View>
+        </Pressable>
     );
-  };
+};
 export default Button;
