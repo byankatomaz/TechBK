@@ -1,22 +1,31 @@
-import { View, Text } from 'react-native'
-import React, { ReactNode, createContext, useState } from 'react'
+import React, { ReactNode, createContext, useState } from 'react';
 
-export const TechContext = createContext<undefined>(undefined)
+interface TechContextProps {
+  visible: boolean;
+  changeVisible: (isVisible: boolean) => void;
+}
 
-interface TechProviderProps{
+export const TechContext = createContext<TechContextProps>({
+  visible: false,
+  changeVisible: () => {},
+});
+
+interface TechProviderProps {
   children: ReactNode;
 }
 
-function TechBkProvider ({children}:TechProviderProps) {
-  const[visible, setVisible] = useState<boolean>(false);
-  function changeVisible(isVisible:boolean){
-    setVisible(isVisible)
+function TechBkProvider({ children }: TechProviderProps) {
+  const [visible, setVisible] = useState<boolean>(false);
+
+  function changeVisible(isVisible: boolean) {
+    setVisible(isVisible);
   }
+
   return (
-      <TechContext.Provider value={{visible, changeVisible}}>
-        {children}
-      </TechContext.Provider>
-  )
+    <TechContext.Provider value={{ visible, changeVisible }}>
+      {children}
+    </TechContext.Provider>
+  );
 }
 
 export default TechBkProvider;
