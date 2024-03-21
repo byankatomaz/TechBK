@@ -1,5 +1,5 @@
 import { View, Text, TouchableOpacity } from "react-native"
-import styles from "../css/global"
+import styles from "../css/Global"
 import React from "react"
 interface CardDetailsProps{
     nome?: string,
