@@ -1,12 +1,12 @@
 import { View, TouchableOpacity } from "react-native";
-import styles from "../css/global";
-import ContainerInfo from "../Components/ContainerInfo";
-import Card from "../Components/Card";
+import styles from "../css/Global";
+import ContainerInfo from "../components/ContainerInfo";
+import Card from "../components/Card";
 import React from "react";
-import Input from "../Components/Inputs";
+import Input from "../components/Inputs";
 import { Feather } from "@expo/vector-icons";
 import { useContext, useState } from "react";
-import Modal from "../Components/Modal";
+import Modal from "../components/Modal";
 import { TechContext } from "../context/TechBkContext";
 
 export default function DeliveryDone() {
