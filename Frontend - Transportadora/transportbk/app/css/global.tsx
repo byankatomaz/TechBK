@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { height, width } from "../Screen/Login";
+import { height, width } from "../screen/Login";
 
 const styles = StyleSheet.create({
     container:{
