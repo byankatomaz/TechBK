@@ -2,8 +2,8 @@ import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { FlatList } from "react-native-gesture-handler";
 import { Feather } from "@expo/vector-icons";
-import styles from "../css/global";
-import ContainerInfo from "../Components/ContainerInfo";
+import styles from "../css/Global";
+import ContainerInfo from "../components/ContainerInfo";
 
 export default function Home({ navigation }: any) {
   type DataType = {
