@@ -1,6 +1,6 @@
 import { View, Text, Modal, Image } from 'react-native'
 import React, { useContext } from 'react'
-import styles from '../css/global'
+import styles from '../css/Global'
 import imageCell from '../../assets/images/cell.jpeg';
 import CardDetails from './CardDetails';
 import { TechContext } from '../context/TechBkContext';
