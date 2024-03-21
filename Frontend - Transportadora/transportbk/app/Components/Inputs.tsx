@@ -1,5 +1,5 @@
 
-import styles from "../css/global";
+import styles from "../css/Global";
 import { TextInput } from "react-native-gesture-handler";
 import React from "react";
 import { TextInputProps } from "react-native";
