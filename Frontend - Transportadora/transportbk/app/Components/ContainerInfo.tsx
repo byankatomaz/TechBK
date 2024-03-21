@@ -1,6 +1,6 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import { Feather } from '@expo/vector-icons'
-import styles from '../css/global'
+import styles from '../css/Global'
 import React, { useState } from 'react'
 import logo from '../../assets/images/logo.png';
 
