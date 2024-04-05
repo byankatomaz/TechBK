@@ -5,10 +5,10 @@ import { Feather } from "@expo/vector-icons";
 import React from "react";
 
 interface CardProps{
-    nome: string
+    name: string
 }
 
-export default function Card({nome}:CardProps){
+export default function Card({name}:CardProps){
 
     const [color, setColor] = useState<string>("red");
     const [countTouch, setCountTouch] =  useState<number>(1);
@@ -37,13 +37,13 @@ export default function Card({nome}:CardProps){
     
     return(
         <View style={styles.card}>
-            <View style={{display:"flex", flexDirection:"row",  width:"52%",height:25, justifyContent:"space-between", bottom:10, borderBottomWidth:1, borderBottomColor:"#009898"}}>
+            <View style={{display:"flex", flexDirection:"row",  width:"90%",height:25, justifyContent:"space-between", bottom:10, borderBottomWidth:1, borderBottomColor:"#009898"}}>
                 <Text style={{color:"white"}}>Nome</Text>
-                <Text style={{color:"white", left:105}}>Status</Text>
+                <Text style={{color:"white"}}>Status</Text>
             </View>
             <View style={{display:"flex", flexDirection:"row", width:310, height:100}}>
-                <Text style={{color:"white"}}>{nome}</Text>
-                <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:nome == null?260:33}}>
+                <Text style={{color:"white"}}>{name}</Text>
+                <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:name == null?280:33}}>
                     <Feather name="square" color={color} size={25} />
                 </TouchableOpacity>
             </View>
