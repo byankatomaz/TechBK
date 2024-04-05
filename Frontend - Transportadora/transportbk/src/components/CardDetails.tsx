@@ -3,10 +3,10 @@ import styles from "../css/global"
 import React from "react"
 
 interface CardDetailsProps{
-    nome?: string,
-    codigo?: string
+    name?: string,
+    product_code?: string
 }
-export default function CardDetails({nome, codigo}:CardDetailsProps){
+export default function CardDetails({name, product_code}:CardDetailsProps){
 
     return(
 
@@ -16,8 +16,8 @@ export default function CardDetails({nome, codigo}:CardDetailsProps){
                     <Text style={{color:"white", paddingLeft:20}}>Código do produto</Text>
                 </View>
                 <View style={{display:"flex", flexDirection:"row"}}>
-                    <Text style={{color:"white", paddingRight:40}}>{nome}</Text>
-                    <Text style={{color:"white", paddingLeft:20}}>{codigo}</Text>
+                    <Text style={{color:"white", paddingRight:40}}>{name}</Text>
+                    <Text style={{color:"white", paddingLeft:20}}>{product_code}</Text>
                 </View>
         </View>
 
