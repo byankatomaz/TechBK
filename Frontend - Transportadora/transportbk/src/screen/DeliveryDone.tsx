@@ -5,7 +5,7 @@ import Card from "../components/Card";
 import React from "react";
 import Input from "../components/Inputs";
 import { Feather } from "@expo/vector-icons";
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Modal from "../components/Modal";
 import { TechContext } from "../context/TechBkContext";
 
@@ -27,13 +27,13 @@ export default function DeliveryDone() {
                 </View>
                 <View style={styles.cards}>
                     <TouchableOpacity onPress={toggleModal}>
-                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card name={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={toggleModal}>
-                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card name={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                     <TouchableOpacity onPress={toggleModal}>
-                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"}/>
+                        <Card name={"MARIA ANTONIA DE APARECISA DSE"}/>
                     </TouchableOpacity>
                 </View>
             <Modal isVisible={visible}/>
