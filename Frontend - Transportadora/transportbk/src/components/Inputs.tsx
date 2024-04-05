@@ -9,9 +9,9 @@ interface InputProps extends TextInputProps {
     bgColor: string,
     textColor?: string
 }
-function Input({ placeholder, bgColor, textColor }: InputProps) {
+function Input({ placeholder, bgColor, textColor, ...rest }: InputProps) {
     return (
-        <TextInput placeholder={placeholder} style={[styles.input, { backgroundColor: bgColor, color: textColor }]} placeholderTextColor={textColor} />
+        <TextInput {...rest} placeholder={placeholder} style={[styles.input, { backgroundColor: bgColor, color: textColor }]} placeholderTextColor={textColor} />
     )
 }
 export default Input;
