@@ -37,8 +37,6 @@ const styles = StyleSheet.create({
         alignItems:"center",
         justifyContent:"flex-start",
         gap:-50,
-
-       
         
     },
     card:{
@@ -60,7 +58,6 @@ const styles = StyleSheet.create({
         padding:10
     },
     button:{
-       
         width:250,
         height:50,
         position:"relative",
@@ -84,8 +81,8 @@ const styles = StyleSheet.create({
         height:90, 
         flexDirection:"row",
         display:"flex", 
-        alignItems:"center", 
-        padding:20
+        alignItems:"center"
+        
     },
     text:{
         color:"white",
