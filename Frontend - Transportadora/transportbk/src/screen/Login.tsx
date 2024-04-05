@@ -1,4 +1,4 @@
-import { View, Image , KeyboardAvoidingView, Dimensions} from "react-native";
+import { View, Image, Dimensions} from "react-native";
 import styles from "../css/global";
 import Button from "../components/Button";
 import Input from "../components/Inputs";
@@ -9,7 +9,7 @@ export const width = Dimensions.get("window").width
 export const height = Dimensions.get("window").height
 
 export default function Login({navigation}:any){
-
+    
     return(
         <KeyboardAwareScrollView>
             <View style={styles.container}>
