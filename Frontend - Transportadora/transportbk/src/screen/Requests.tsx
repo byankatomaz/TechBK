@@ -12,9 +12,9 @@ export default function Requests() {
             <View style={{ width: "100%", display: "flex", alignItems: "center", height: "70%" }}>
 
                 <View style={styles.cards}>
-                    <TouchableOpacity>
-                        <Card nome={"MARIA ANTONIA DE APARECISA DSE"} />
-                    </TouchableOpacity>
+                    
+                    <Card name={"MARIA ANTONIA DE APARECISA DSE"} />
+                    
                 </View>
             </View>
 
