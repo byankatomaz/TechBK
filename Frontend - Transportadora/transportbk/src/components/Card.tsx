@@ -41,9 +41,9 @@ export default function Card({name}:CardProps){
                 <Text style={{color:"white"}}>Nome</Text>
                 <Text style={{color:"white"}}>Status</Text>
             </View>
-            <View style={{display:"flex", flexDirection:"row", width:310, height:100}}>
+            <View style={{display:"flex", flexDirection:"row", width:"90%", height:100}}>
                 <Text style={{color:"white"}}>{name}</Text>
-                <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:name == null?280:33}}>
+                <TouchableOpacity onPress={changeColor} style={{ width:40, display:"flex", alignItems:"center", marginLeft:name == null?280:83}}>
                     <Feather name="square" color={color} size={25} />
                 </TouchableOpacity>
             </View>

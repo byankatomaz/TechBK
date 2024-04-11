@@ -14,7 +14,7 @@ const ModalInfo = ({ isVisible }: ModalProps) => {
     const { changeVisible } = useContext(TechContext)
     return (
         <Modal presentationStyle={"overFullScreen"} transparent={true} style={{ display: "flex", justifyContent: "center", alignItems: "flex-end" }} animationType="slide" visible={isVisible} >
-            <View style={{ display: "flex", backgroundColor: "#252525", height: "60%", width: "85%", alignItems: "center", borderRadius: 7, left: 31, top: 130 }}>
+            <View style={{ display: "flex", backgroundColor: "#252525", height: "60%", width: "90%", alignItems: "center", borderRadius: 7, left: 20, top: 130 }}>
 
                 <View style={{ width: '100%', height: "50%", backgroundColor: "white" }}>
                     <Image source={require("./../../assets/cell.jpeg")} style={{ width: "100%", height: "100%" }} />

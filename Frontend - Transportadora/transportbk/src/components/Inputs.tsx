@@ -7,7 +7,8 @@ import { TextInputProps } from "react-native";
 interface InputProps extends TextInputProps {
     placeholder: string,
     bgColor: string,
-    textColor?: string
+    textColor?: string,
+ 
 }
 function Input({ placeholder, bgColor, textColor, ...rest }: InputProps) {
     return (
