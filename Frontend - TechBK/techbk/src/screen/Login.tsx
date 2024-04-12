@@ -21,7 +21,7 @@ export default function Login({navigation}:any){
                     <Input   placeholder={"Digite sua senha: "} bgColor={"white"}/>
                 </View>
                     <Button size={0} text={"Não possui login? Cadastre-se"} colorText={"white"} onPress={()=> navigation.navigate("Register")} backgroundColor={"transparent"} width={250} top={20}/>
-                <Button size={0} text={"Login"} colorText={"white"}  width={150} top={40} onPress={() => {navigation.navigate("Home")}}/>
+                <Button size={0} text={"Login"} colorText={"white"}  width={150} top={40} onPress={() => {navigation.navigate("ProductList")}}/>
             </View>
         </KeyboardAwareScrollView>
     
