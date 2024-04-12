@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     },
     item: {
         backgroundColor: "#252525",
-        width: 180,
+        width: 185,
+        borderRadius:5,
         display:"flex",
         height: 250,
         justifyContent: "flex-start",
