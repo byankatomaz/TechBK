@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     container: {
         height: "100%",
-        flex:1,
+        flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'black',
@@ -15,7 +15,7 @@ const styles = StyleSheet.create({
         width: "100%",
         height: "100%"
     },
-    containerImg: {
+    containerImage: {
         width: "100%",
         height: 170,
         bottom: 30
@@ -27,12 +27,19 @@ const styles = StyleSheet.create({
     item: {
         backgroundColor: "#252525",
         width: 185,
-        borderRadius:5,
-        display:"flex",
+        borderRadius: 5,
+        display: "flex",
         height: 250,
         justifyContent: "flex-start",
         alignItems: "center",
     },
+    itemIcon: {
+        width: "100%", 
+        padding: 2, 
+        display: "flex", 
+        alignItems: "flex-end", 
+        justifyContent: "center"
+    }
 })
 
 export default styles;
