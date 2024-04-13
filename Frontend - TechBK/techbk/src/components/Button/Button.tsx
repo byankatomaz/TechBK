@@ -8,7 +8,7 @@ interface CustomButtonProps extends PressableProps {
     backgroundColor?: string;
     colorText?: string;
     size?: number;
-    width?: number;
+    width?: string;
     top?: number;
     iconName?: any
 }
