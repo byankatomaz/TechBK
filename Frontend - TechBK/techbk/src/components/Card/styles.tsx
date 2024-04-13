@@ -1,15 +1,17 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    cardDetails:{
+    CardBag:{
         width:"100%",
-        height:80,
+        height:"20%",
         backgroundColor:"#252525",
         display:"flex",
         alignItems:"center",
+        justifyContent:"flex-start",
         padding:10,
         marginBottom:20,
         borderRadius:7,
+        flexDirection:"row"
         
     },
     cards:{
