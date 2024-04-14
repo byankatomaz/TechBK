@@ -1,7 +1,7 @@
 export default interface Product{
     name?: string,
     price?: string,
-    quantity?: number,
+    amount?: number,
     image?:any,
     brand?: string
 
