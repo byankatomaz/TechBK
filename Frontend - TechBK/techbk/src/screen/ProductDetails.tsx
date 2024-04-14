@@ -8,9 +8,11 @@ import { Feather } from "@expo/vector-icons";
 import stylesComponent from '../components/Button/styles';
 import Button from '../components/Button/Button';
 import { TechContext } from '../context/TechBkContext';
+
+
 function ProductDetails({ navigation, route }: any) {
   const { product }: Product = route.params;
-  const {changeVisible} = useContext(TechContext)
+  const { changeVisible } = useContext(TechContext)
 
   return (
     <View style={styles.container}>
@@ -25,14 +27,17 @@ function ProductDetails({ navigation, route }: any) {
           <Image source={product.image} style={styles.image} />
         </View>
       </View>
-      <View style={{width:"100%", display:"flex", alignItems:"flex-start", padding:25}}>
+      <View style={{ width: "100%", display: "flex", alignItems: "flex-start", padding: 25 }}>
         <Text style={styles.text}>{product.brand}</Text>
-        <Text style={[styles.text, {fontSize:35}]}>{product.name}</Text>
-        <Text style={[styles.text, {color:"#009898"}]}>R$ {product.price}</Text>
+        <Text style={[styles.text, { fontSize: 35 }]}>{product.name}</Text>
+        <Text style={[styles.text, { color: "#009898" }]}>R$ {product.price}</Text>
       </View>
-      <Button onPress={()=>navigation.navigate("Bag", {productBag:product})} width={"85%"} text={'Comprar'} colorText={'white'} size={30} top={80}>
-
-      </Button>
+      <View style={{width:"100%",display:"flex", flexDirection:"row", padding:10, justifyContent:"space-between"}}>
+      <Button onPress={() => navigation.navigate("Bag", { productBag: product })} width={"48%"} text={'Comprar'} colorText={'white'} size={30} top={80}/>
+      <Button onPress={() => navigation.navigate("Bag", { productBag: product })} width={"48%"} text={'Adicionar ao carrnho'} colorText={'white'} size={30} top={80}/>
+      </View>
+     
+      
     </View>
   )
 }
