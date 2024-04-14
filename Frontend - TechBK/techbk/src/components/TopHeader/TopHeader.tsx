@@ -1,11 +1,12 @@
 import { Feather } from '@expo/vector-icons'
 import React, { useContext } from 'react'
 import { Text, TouchableOpacity, View } from 'react-native'
-
+import { useNavigation } from '@react-navigation/native'
 import styles from './styles'
 import Input from '../Inputs/Inputs'
 import ModalInfo from '../Modal/Modal'
 import { TechContext } from '../../context/TechBkContext'
+import Product from '../../interfaces/Product'
 
 
 
@@ -18,6 +19,15 @@ interface ToHeaderProps {
 
 const TopHeader = ({ text, icon, typeTopHeader }: ToHeaderProps) => {
   const {visible, changeVisible} = useContext(TechContext)
+  const product:Product = {
+    name:"",
+    brand:"",
+    image:"",
+    price:"",
+    quantity:0
+  }
+  const navigation = useNavigation()
+
   const TopHeaderProductList = () => (
     <View style={styles.headers}>
       <Input bgColor={"#252525"} textColor='white' placeholder={"Search prdoucts:"} bottom={19} />
@@ -32,7 +42,7 @@ const TopHeader = ({ text, icon, typeTopHeader }: ToHeaderProps) => {
     <View style={styles.headers}>
      
       <Text style={styles.text}>{text}</Text>
-      <TouchableOpacity onPress={()=>changeVisible(tr)}>
+      <TouchableOpacity onPress={()=>navigation.navigate("Bag", {productBag:product})}>
         <View style={{ width: 65, height: 68, borderRadius: 30, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Feather name={icon} size={30} color={'white'} />
         </View>
