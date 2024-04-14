@@ -3,13 +3,12 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
     CardBag:{
         width:"100%",
-        height:"20%",
+        height:"70%",
         backgroundColor:"#252525",
         display:"flex",
         alignItems:"center",
         justifyContent:"flex-start",
         padding:10,
-        marginBottom:20,
         borderRadius:7,
         flexDirection:"row"
         
@@ -25,11 +24,14 @@ const styles = StyleSheet.create({
     },
     card:{
         width:"100%",
-        height:"35%",
+        height:"25%",
         display:"flex",
         alignItems:"center",
         justifyContent:"flex-start",
-        padding:10
+        padding:10,
+        borderRadius:12,
+        borderColor:"#009898",
+        borderWidth:2
     },
 
 })
