@@ -104,7 +104,7 @@ export default function ProductList({ navigation }: any) {
                 const product:Product = {
                   name:item.name,
                   price: item.price,
-                  quantity:2,
+                  amount:2,
                   image:cell,
                   brand:item.brand
                 }
