@@ -18,31 +18,25 @@ interface ToHeaderProps {
 }
 
 const TopHeader = ({ text, icon, typeTopHeader }: ToHeaderProps) => {
-  const {visible, changeVisible} = useContext(TechContext)
+  const {visible, findProducts} = useContext(TechContext)
   const product:Product = {
-    name:"",
-    brand:"",
-    image:"",
-    price:"",
-    quantity:0
+    title:"",
+    official_store_name:"",
+    thumbnail:"",
+    price:0,
+    amount:0
   }
-  const navigation = useNavigation()
 
   const TopHeaderProductList = () => (
     <View style={styles.headers}>
-      <Input bgColor={"#252525"} textColor='white' placeholder={"Search prdoucts:"} bottom={19} />
-      <TouchableOpacity>
-        <View style={{ width: 65, height: 68, borderRadius: 30, display: "flex", alignItems: "center", justifyContent: "center" }}>
-          <Feather name={icon} size={30} color={'white'} />
-        </View>
-      </TouchableOpacity>
+      <Input bgColor={"#252525"} textColor='white' placeholder={"Search prdoucts:"} onChangeText={(text)=>findProducts(text)} bottom={30} />
     </View>
   )
   const TopHeaderProductDetails = () => (
     <View style={styles.headers}>
      
       <Text style={styles.text}>{text}</Text>
-      <TouchableOpacity onPress={()=>navigation.navigate("Bag", {productBag:product})}>
+      <TouchableOpacity >
         <View style={{ width: 65, height: 68, borderRadius: 30, display: "flex", alignItems: "center", justifyContent: "center" }}>
           <Feather name={icon} size={30} color={'white'} />
         </View>

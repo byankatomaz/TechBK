@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
         width: 185,
         borderRadius: 5,
         display: "flex",
-        height: 250,
-        justifyContent: "flex-start",
+        height: 380,
+        justifyContent: "center",
         alignItems: "center",
     },
     itemIcon: {

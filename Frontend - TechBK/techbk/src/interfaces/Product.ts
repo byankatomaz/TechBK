@@ -1,8 +1,8 @@
 export default interface Product{
-    name?: string,
-    price?: string,
+    title?: string | undefined,
+    price?: number  | undefined,
     amount?: number,
-    image?:any,
-    brand?: string
+    thumbnail?:any,
+    official_store_name?: string
 
 }

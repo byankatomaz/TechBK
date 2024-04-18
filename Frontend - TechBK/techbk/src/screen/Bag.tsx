@@ -24,12 +24,12 @@ export default function Bag({ navigation, route }: any) {
 
                 <ScrollView >
                     <View style={{ width: "100%", height: 180, display:"flex" }}>
-                        {productBag.name && <CardBag name={productBag.name} price={productBag.price} image={productBag.image} />}
+                        {productBag.title && <CardBag title={productBag.title} price={productBag.price} thumbnail={productBag.thumbnail} />}
                     </View>
                 </ScrollView>
             </SafeAreaView>
             <Button width='85%' top={55} text='Checkout' colorText='white'/>
-            <ModalInfo isVisible={visible} name={productBag.name} price={productBag.price} image={productBag.image}/>
+            <ModalInfo isVisible={visible} name={productBag.title} price={productBag.price} image={productBag.thumbnail}/>
 
         </View>
     )

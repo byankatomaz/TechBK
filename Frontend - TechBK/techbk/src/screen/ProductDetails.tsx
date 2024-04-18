@@ -17,20 +17,20 @@ function ProductDetails({ navigation, route }: any) {
   return (
     <View style={styles.container}>
       <TopHeader typeTopHeader={false} text={product.name} icon={"shopping-cart"} />
-      <View style={[styles.item, { height: "45%", width: "90%", backgroundColor: "transparent" }]}>
+      <View style={[styles.item, { height: "42%", width: "90%", backgroundColor: "transparent" }]}>
         <View style={styles.itemIcon}>
           <TouchableOpacity>
-            <Feather name={"bookmark"} color={"gray"} size={30} />
+            <Feather name={"bookmark"} color={"gray"} size={25} />
           </TouchableOpacity>
         </View>
-        <View style={[styles.containerImage, { bottom: 0, height: "80%" }]}>
-          <Image source={product.image} style={styles.image} />
+        <View style={[styles.containerImage, { bottom: 0, height: "100%" }]}>
+          <Image source={{uri:product.thumbnail}} style={styles.image} />
         </View>
       </View>
       <View style={{ width: "100%", display: "flex", alignItems: "flex-start", padding: 25 }}>
         <Text style={styles.text}>{product.brand}</Text>
-        <Text style={[styles.text, { fontSize: 35 }]}>{product.name}</Text>
-        <Text style={[styles.text, { color: "#009898" }]}>R$ {product.price}</Text>
+        <Text style={[styles.text, { fontSize: 35 }]}>{product.title}</Text>
+        <Text style={[styles.text, { fontSize:28, fontWeight: 'bold', color:"#009898", marginTop:15}]}>R$ {product.price}</Text>
       </View>
       <View style={{width:"100%",display:"flex", flexDirection:"row", padding:10, justifyContent:"space-between"}}>
       <Button onPress={() => navigation.navigate("Bag", { productBag: product })} width={"48%"} text={'Comprar'} colorText={'white'} size={30} top={80}/>
