@@ -6,13 +6,14 @@ const styles = StyleSheet.create({
         borderBottomColor:"#009898",
         width:"95%", 
         position:"absolute",
-        top:5, 
+        top:1, 
         padding:5,
-        height:60, 
+        height:65, 
         flexDirection:"row",
         display:"flex", 
         alignItems:"center",
-        justifyContent:"flex-end"
+        justifyContent:"flex-end",
+        
         
     },
     text:{
@@ -20,7 +21,13 @@ const styles = StyleSheet.create({
         fontSize:20
     },
     headers:{
-        width: "100%", alignItems: "center", justifyContent: "space-between", display: "flex", flexDirection: "row" 
+        width: "100%", 
+        
+        alignItems: "center",
+         justifyContent: "center",
+          display: "flex", 
+          flexDirection: "row" ,
+          
     }
  
    
