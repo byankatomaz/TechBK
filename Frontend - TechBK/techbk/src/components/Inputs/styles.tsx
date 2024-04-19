@@ -8,7 +8,6 @@ const styles = StyleSheet.create({
         height:50,
         backgroundColor:"white",
         borderRadius:7,
-        marginTop:35,
         padding:4
 
     },
@@ -16,7 +15,7 @@ const styles = StyleSheet.create({
         display:"flex",
         alignItems:"center",
         justifyContent:"center",
-       
+        gap:25
        
     },
    
