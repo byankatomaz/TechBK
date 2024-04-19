@@ -13,29 +13,32 @@ import Bag from "./screen/Bag";
 
 const stack = createStackNavigator();
 
-function Router(){
+function Router() {
 
-    return(
+    return (
 
         <NavigationContainer independent={true}>
             <TechBkProvider>
-            <StatusBar/>
+                <StatusBar />
                 <stack.Navigator>
-                <stack.Screen name="ProductList" component={Home}  options={{headerShown:false}}/>
-                <stack.Screen name="Bag" component={Bag}  options={{headerShown:false}}/>
-             
-                    <stack.Screen name="Welcome" component={Welcome}  options={{headerShown:false}}/>
-                    <stack.Screen name="Login" component={Login}  options={{headerShown:false}}/>
-                    <stack.Screen name="ProductDetails" component={ProductDetails} options={{headerShown:false}}/>
-                  
-                   
-                  
+                    <stack.Screen name="ProductList" component={Home} options={{ headerShown: false }} />
+                    <stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
+                    <stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+
+                    <stack.Screen name="Bag" component={Bag} options={{ headerShown: false }} />
+
+                    <stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+
+                    <stack.Screen name="ProductDetails" component={ProductDetails} options={{ headerShown: false }} />
+
+
+
                 </stack.Navigator>
             </TechBkProvider>
         </NavigationContainer>
 
     )
-    
+
 
 }
 
