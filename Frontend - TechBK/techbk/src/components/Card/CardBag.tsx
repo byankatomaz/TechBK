@@ -5,6 +5,7 @@ import Product from "../../interfaces/Product"
 import stylesGlobal from "../../css/global"
 import { TechContext } from "../../context/TechBkContext"
 import { Feather } from "@expo/vector-icons";
+import ModalInfo from "../Modal/Modal"
 
 export default function CardBag({ title, thumbnail, price }: Product) {
     const [amount, setAmount] = useState<number>(1);
@@ -18,12 +19,12 @@ export default function CardBag({ title, thumbnail, price }: Product) {
                 <Image style={stylesGlobal.image} source={{ uri: thumbnail }} />
             </View>
             <View style={{ height: 100, width: 280, display: "flex", flexDirection: 'column', gap: 6 }}>
-                <Text style={[stylesGlobal.text, {fontSize:16}]}>{title}</Text>
+                <Text style={[stylesGlobal.text, {fontSize:16, width:"95%"}]}>{title}</Text>
                 <View style={{height:"100%", width:"100%", display:"flex", flexDirection:"row"}}>
             
                 <View style={styles.moreOrLess}>
                     <TouchableOpacity onPress={() => {
-                        amount == 1 ? changeVisible(true) : false
+                        amount == 1 ? changeVisible(true) : changeVisible(false)
                         setAmount(amount <= 1 ? amount : (amount - 1))
                         setTotal((amount - 1) <= 1 ? amount * parseFloat(price) : (amount - 1) * parseFloat(price))
                     }}>
@@ -42,7 +43,7 @@ export default function CardBag({ title, thumbnail, price }: Product) {
                 </View>
                 <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {total}</Text></View>
             </View>
-        
+            <ModalInfo name={title}/>
             </View>
 
 
