@@ -1,15 +1,13 @@
-import { Feather } from "@expo/vector-icons";
 import React, { useContext, useEffect, useState } from "react";
-import { Image,  Text, TouchableOpacity, View } from "react-native";
-import { FlatList, ScrollView } from "react-native-gesture-handler";
+import { Image,  SafeAreaView,  Text, TouchableOpacity, View } from "react-native";
+import { FlatList, ScrollView } from "react-native";
 import styles from "../css/global";
-import cell from '../../assets/cell.png';
 import Product from "../interfaces/Product";
 import TopHeader from "../components/TopHeader/TopHeader";
-import { apiProducts } from "../../api/ApiProducts";
 import { ProductService } from "../services/ProductService";
 import { TechContext } from "../context/TechBkContext";
 import { ActivityIndicator } from "react-native";
+
 
 export default function ProductList({ navigation }: any) {
   const [products, setProducts] = useState<Product[]>([]);
@@ -77,11 +75,6 @@ export default function ProductList({ navigation }: any) {
   console.log(products)
   const Item = ({ title, official_store_name, thumbnail, price }: Product) => (
     <View style={styles.item}>
-      {/* <View style={styles.itemIcon}>
-        <TouchableOpacity>
-          <Feather name={"bookmark"} color={"gray"} size={30} />
-        </TouchableOpacity>
-      </View> */}
       <View style={[styles.containerImage, { bottom: 0, height: 150, width:150 }]}>
         <Image source={{uri: thumbnail}} style={styles.image} />
       </View>
@@ -99,8 +92,9 @@ export default function ProductList({ navigation }: any) {
   
   return (
     <View style={styles.container}>
+    
       <TopHeader typeTopHeader={true}  icon={"search"} />
-     
+    
       <View
         style={{
           width: "100%",
@@ -112,7 +106,9 @@ export default function ProductList({ navigation }: any) {
         
         }}
       >
-        <ScrollView>
+         
+        <SafeAreaView>
+        {products.length == 0 && <ActivityIndicator hidesWhenStopped={true}/>}
           <FlatList
             data={products}
             horizontal={false}
@@ -133,18 +129,15 @@ export default function ProductList({ navigation }: any) {
               }>
                 <Item title={item.title} price={item.price} thumbnail={item.thumbnail} official_store_name={item.official_store_name} />
               </TouchableOpacity>
-
-
-
-
             )}
             keyExtractor={(item) => item.id}
           />
-           {<ActivityIndicator hidesWhenStopped={products != null?true:false}/>}
+            
+        </SafeAreaView>
         
-        </ScrollView>
-     
       </View>
+     
     </View>
+    
   );
 }
