@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
         position:"absolute",
         top:1, 
         padding:5,
-        height:65, 
+        height:105, 
         flexDirection:"row",
         display:"flex", 
         alignItems:"center",

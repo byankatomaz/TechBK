@@ -5,18 +5,22 @@ interface TechContextProps {
   visible: boolean;
   filter: string;
   bag: Product[],
+  visiblePay:boolean;
   changeVisible: (isVisible: boolean) => void;
   addProduct: (product: Product)=>void;
   findProducts: (product:any)=>void;
+  changeVisiblePayment: (isVisible:boolean)=>void;
 }
 
 export const TechContext = createContext<TechContextProps>({
   visible: false,
+  visiblePay: false,
   filter: "",
   bag: [],
   changeVisible: () => {},
   findProducts: ()=>{},
-  addProduct: ()=>{}
+  addProduct: ()=>{},
+  changeVisiblePayment:()=>{}
 });
 
 interface TechProviderProps {
@@ -25,6 +29,7 @@ interface TechProviderProps {
 
 function TechBkProvider({ children }: TechProviderProps) {
   const [visible, setVisible] = useState<boolean>(false);
+  const [visiblePay, setVisiblePay] = useState<boolean>(false);
   const [filter, setFilter] = useState<string>("celulares");
   const [bag, setBag] = useState<Product[]>([]);
   function changeVisible(isVisible: boolean) {
@@ -36,9 +41,12 @@ function TechBkProvider({ children }: TechProviderProps) {
   function addProduct(product: Product){
     setBag([...bag, product])
   }
+  function changeVisiblePayment(isVisible:boolean){
+    setVisiblePay(isVisible)
+  }
 
   return (
-    <TechContext.Provider value={{ addProduct, bag, visible, changeVisible, findProducts, filter }}>
+    <TechContext.Provider value={{visiblePay, changeVisiblePayment, addProduct, bag, visible, changeVisible, findProducts, filter }}>
       {children}
     </TechContext.Provider>
   );

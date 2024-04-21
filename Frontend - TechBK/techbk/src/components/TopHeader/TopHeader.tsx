@@ -46,7 +46,7 @@ const TopHeader: React.FC<TopHeaderProps> = ({ text, icon, typeTopHeader, screen
           </TouchableOpacity>
         </View>
       )}
-      <ModalInfo isVisible={visible} />
+
     </View>
   )
 }
