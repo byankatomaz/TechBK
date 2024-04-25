@@ -13,57 +13,11 @@ export default function ProductList({ navigation }: any) {
   const [products, setProducts] = useState<Product[]>([]);
   const {filter} = useContext(TechContext)
   
-  // type Product = {
-  //   id: string;
-  //   title: string;
-  //   price: number;
-  //   brand: string
 
-  // }[];
-
-  // const DATA: DataType = [
-  //   {
-  //     id: '1',
-  //     name: "Galaxy A54",
-  //     price: "700",
-  //     brand:"Samsung"
-
-  //   },
-  //   {
-  //     id: '2',
-  //     name: "Galaxy A55",
-  //     price: "600",
-  //     brand:"Samsung"
-  //   },
-  //   {
-  //     id: '3',
-  //     name: "Galaxy A56",
-  //     price: "500",
-  //     brand:"Samsung"
-  //   },
-  //   {
-  //     id: '4',
-  //     name: "Gakaxy S23 FE",
-  //     price: "400",
-  //     brand:"Samsung"
-  //   },
-  //   {
-  //     id: '5',
-  //     name: "Iphone 13",
-  //     price: "300",
-  //     brand:"Samsung"
-  //   },
-  //   {
-  //     id: '6',
-  //     name: "Galaxy Z Fold5",
-  //     price: "200",
-  //     brand:"Samsung"
-  //   },
-  // ];
   useEffect(()=>{
 
     const response = ProductService.getProducts(filter).then(function(response){
-      const data = response.map(each=>{
+      const data = response.map((each:any)=>{
         return each
       })
       setProducts(data)
@@ -72,7 +26,6 @@ export default function ProductList({ navigation }: any) {
     
   },[filter])
   
-  console.log(products)
   const Item = ({ title, official_store_name, thumbnail, price }: Product) => (
     <View style={styles.item}>
       <View style={[styles.containerImage, { bottom: 0, height: 150, width:150 }]}>
@@ -119,6 +72,7 @@ export default function ProductList({ navigation }: any) {
                 const product:Product = {
                   title:item.title,
                   price: item.price,
+                  amount:1,
                   thumbnail:item.thumbnail,
                   official_store_name:item.official_store_name
                 }

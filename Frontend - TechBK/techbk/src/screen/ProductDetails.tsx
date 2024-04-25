@@ -31,10 +31,12 @@ function ProductDetails({ navigation, route }: any) {
       <View style={{ width: "100%", display: "flex", flexDirection: "row", padding: 10, justifyContent: "space-between", top: 35 }}>
         <Button onPress={() => {
           addProduct(product)
+          
           navigation.navigate("Bag")
-          }} width={"48%"} text={'Comprar'} colorText={'white'} size={30} />
-        <Button onPress={()=>{ addProduct(product)
-        Alert.alert("Produto adicionado no carrinho!", )
+        }} width={"48%"} text={'Comprar'} colorText={'white'} size={30} />
+        <Button onPress={() => {
+          addProduct(product)
+          Alert.alert("Produto adicionado no carrinho!",)
         }} width={"48%"} text={'Adicionar ao carrnho'} colorText={'white'} size={30} />
       </View>
 

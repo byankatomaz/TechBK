@@ -27,10 +27,9 @@ const TopHeader: React.FC<TopHeaderProps> = ({ text, icon, typeTopHeader, screen
   return (
     <View style={styles.topheader}>
       {typeTopHeader ? (
-        <View style={styles.headers}>
+        <View style={[styles.headers, {top:10}]}>
           <Input
             bgColor="#252525"
-            value={filter}
             textColor="white"
             placeholder="Search products:"
             onChangeText={text => findProducts(text)}

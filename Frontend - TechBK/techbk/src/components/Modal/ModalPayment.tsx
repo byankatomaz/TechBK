@@ -6,8 +6,9 @@ import { TechContext } from '../../context/TechBkContext'
 import Button from '../Button/Button'
 import stylesGlobal from '../../css/global'
 
+
 export default function ModalPayment() {
-    const {visiblePay, changeVisiblePayment, bag} = useContext(TechContext)
+    const {changeVisiblePayment, bag, visiblePay} = useContext(TechContext)
     let total = 0;
     if(bag){
         bag.forEach(element =>{
@@ -16,7 +17,7 @@ export default function ModalPayment() {
     }
   return (
     <Modal transparent={true} animationType="slide" visible={visiblePay} >
-            <View style={{ display: "flex", backgroundColor: "rgba(0, 0, 0,0.95)", height: "100%", width: "100%", alignItems: "center", justifyContent: "center", borderRadius: 7, flex: 1 }}>
+            <View style={{ display: "flex", backgroundColor: "rgba(0, 0, 0,0.95)", height: "50%", width: "100%", alignItems: "center", justifyContent: "center", borderRadius: 7, flex: 1 }}>
             <View style={{height:"50%"}}>
                 <Text style={stylesGlobal.text}>Valor total da compra: {total}</Text>
             </View>
