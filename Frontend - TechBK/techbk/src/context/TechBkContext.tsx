@@ -10,7 +10,7 @@ interface TechContextProps {
   changeVisible: (isVisible: boolean) => void;
   addProduct: (product: Product)=>void;
   findProducts: (product:any)=>void;
-  amountProduct:(product:any, amount:number)=>void;
+  amountProduct:(value:number)=>void;
   changeVisiblePayment: (isVisible:boolean)=>void;
 }
 
@@ -45,26 +45,15 @@ function TechBkProvider({ children }: TechProviderProps) {
   }
   function addProduct(product: Product){
     setBag([...bag, product])
+    
   }
   function changeVisiblePayment(isVisible:boolean){
     setVisiblePay(isVisible)
   }
-  function amountProduct(product:any, amount:number){
-   
-    bag.findIndex(element => {
-      if(element.title === product.title){
-        product.amount = amount
-        console.log("worked it")
-        console.log(product.amount)
-      }
-    })
-    
-      bag.forEach(element =>{
-        let total = element.amount * element.price
-        setTotal(total)
-    })
-    
-   
+  function amountProduct( value:number){
+          setTotal(value)
+
+  
   
   }
 
