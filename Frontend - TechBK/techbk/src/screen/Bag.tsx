@@ -11,8 +11,8 @@ import ModalPayment from '../components/Modal/ModalPayment';
 
 export default function Bag({ navigation, route }: any) {
 
-    const {changeVisiblePayment, bag, total} = useContext(TechContext)
-   
+    const {changeVisiblePayment, bag, total, amountProduct} = useContext(TechContext)
+  
     return (
 
         <View style={styles.container}>
@@ -35,8 +35,8 @@ export default function Bag({ navigation, route }: any) {
             </SafeAreaView>
 
             <View style={{ width: "100%", display: "flex", alignItems: "center",gap:12, borderTopWidth: 2, borderColor: "#009898" }}>
-                <Text style={[styles.text, { top:10}]}>Total: R$ {total.toFixed(2)}</Text>
-                <Button width='85%' top={25} onPress={() => { changeVisiblePayment(true) }} text='Confirmar compra' colorText='white' />
+                <Text style={[styles.text, { top:10}]}>Total: R$ {bag.length == 0?0.00:total.toFixed(2)}</Text>
+                <Button width='85%' top={17} onPress={() => { changeVisiblePayment(true) }} text='Confirmar compra' colorText='white' />
             </View>
            
             <ModalPayment/>
