@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Image, Text, TouchableOpacity, View } from "react-native"
 import styles from "./styles"
 import Product from "../../interfaces/Product"
@@ -14,8 +14,26 @@ interface CardProps{
 export default function CardBag({ product }: CardProps) {
     const [amount, setAmount] = useState<number>(1);
     const [totalV, setTotal] = useState<number>(product.price);
-    const { changeVisible, amountProduct, total } = useContext(TechContext)
+    const { changeVisible, amountProduct, bag } = useContext(TechContext)
     
+    let total = 0;
+    useEffect(()=>{
+        if(bag){
+            bag.findIndex(element=>{
+                if(product.title === element.title){
+                    product.amount = amount
+                }
+            })
+            bag.forEach(element =>{
+               
+                total = total+=element.price * element.amount;
+                amountProduct(total)
+            })
+        }
+
+    },[totalV])
+    
+    console.log(product.title, product.amount)
     return (
 
         <View style={styles.CardBag}>
@@ -28,12 +46,14 @@ export default function CardBag({ product }: CardProps) {
             
                 <View style={styles.moreOrLess}>
                     <TouchableOpacity onPress={() => {
+                        let amountIn = amount == 1 ? amount : (amount - 1)
+                        setAmount(amount == 1 ? amount : (amount - 1))
                         amount == 1 ? changeVisible(true) : changeVisible(false)
                        
-                        setAmount(amount <= 1 ? amount : (amount - 1))
+                        
                         console.log("aaaaaaaaaaa", total)
-                        amountProduct(product, amount <= 1 ? amount : (amount - 1))
-                        setTotal((amount - 1) <= 1 ? amount * parseFloat(product.price) : (amount - 1) * parseFloat(product.price))
+                     
+                        setTotal( amountIn * parseFloat(product.price))
                     }}>
 
                         <Feather name="minus" size={17} color={"white"} />
@@ -45,13 +65,13 @@ export default function CardBag({ product }: CardProps) {
                         console.log(product.amount)
                         setAmount(amount + 1)
                         setTotal((amount + 1) * parseFloat(product.price))
-                        amountProduct(product, amount+1)
+                        
                     }}>
 
                         <Feather name="plus" color={"white"} size={17} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {totalV.toFixed(2) === total.toFixed(2)?total:totalV}</Text></View>
+                <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {(product.price*amount).toFixed(2)}</Text></View>
             </View>
             <ModalInfo name={product.title}/>
             </View>
