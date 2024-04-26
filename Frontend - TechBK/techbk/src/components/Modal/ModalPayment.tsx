@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { TechContext } from '../../context/TechBkContext'
 import Button from '../Button/Button'
 import stylesGlobal from '../../css/global'
+import { styles } from './styles'
 
 
 export default function ModalPayment() {
@@ -12,16 +13,18 @@ export default function ModalPayment() {
     let total = 0;
     if(bag){
         bag.forEach(element =>{
-            total = total+=element.price;
+            total = total+=element.price * element.amount;
         })
     }
   return (
     <Modal transparent={true} animationType="slide" visible={visiblePay} >
-            <View style={{ display: "flex", backgroundColor: "rgba(0, 0, 0,0.95)", height: "50%", width: "100%", alignItems: "center", justifyContent: "center", borderRadius: 7, flex: 1 }}>
-            <View style={{height:"50%"}}>
-                <Text style={stylesGlobal.text}>Valor total da compra: {total}</Text>
+            <View style={styles.modalContainer}>
+            <View style={styles.modalContent}>
+                <Text style={stylesGlobal.text}>Deseja confirmar a compra?</Text>
+                <Button text='Sim' colorText='white'  top={50} width='50%' onPress={()=>changeVisiblePayment(false)}/>
+                
             </View>
-            <Button text='Realizar a compra' colorText='white' width='50%' onPress={()=>changeVisiblePayment(false)}/>
+           
 
             </View>
         </Modal>
