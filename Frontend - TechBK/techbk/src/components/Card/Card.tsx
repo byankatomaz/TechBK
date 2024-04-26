@@ -11,7 +11,7 @@ interface CardProps{
 
 export default function Card({name}:CardProps){
 
-    const {bag, changeVisible} = useContext(TechContext)
+    const {bag, changeVisible, amountProduct} = useContext(TechContext)
     const indice = bag.findIndex((product)=> product.title == name);
     console.log(bag)
     return(
@@ -27,7 +27,9 @@ export default function Card({name}:CardProps){
                 </TouchableOpacity>
                 <TouchableOpacity onPress={()=>{
                     changeVisible(false)
-                    bag.splice(indice, 1)}} style={{ width:40, display:"flex", alignItems:"center", }}>
+                    bag.splice(indice, 1)
+                  
+                    }} style={{ width:40, display:"flex", alignItems:"center", }}>
                     <Feather name="check" color={'white'} size={35} />
                 </TouchableOpacity>
             </View>
