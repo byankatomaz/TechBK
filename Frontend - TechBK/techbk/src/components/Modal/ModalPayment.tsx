@@ -13,9 +13,12 @@ export default function ModalPayment() {
     let total = 0;
     if(bag){
         bag.forEach(element =>{
-            total = total+=element.price * element.amount;
+            total = total+=(element.price*element.amount);
+           
         })
+       
     }
+    
   return (
     <Modal transparent={true} animationType="slide" visible={visiblePay} >
             <View style={styles.modalContainer}>
