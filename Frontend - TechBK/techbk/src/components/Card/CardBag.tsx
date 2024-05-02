@@ -14,26 +14,8 @@ interface CardProps{
 export default function CardBag({ product }: CardProps) {
     const [amount, setAmount] = useState<number>(1);
     const [totalV, setTotal] = useState<number>(product.price);
-    const { changeVisible, amountProduct, bag } = useContext(TechContext)
-    
-    let total = 0;
-    useEffect(()=>{
-        if(bag){
-            bag.findIndex(element=>{
-                if(product.title === element.title){
-                    product.amount = amount
-                }
-            })
-            bag.forEach(element =>{
-               
-                total = total+=element.price * element.amount;
-                amountProduct(total)
-            })
-        }
-
-    },[totalV])
-    
-    console.log(product.title, product.amount)
+    const { changeVisible, total, changeTotal } = useContext(TechContext)
+    changeTotal(totalV)
     return (
 
         <View style={styles.CardBag}>
@@ -71,7 +53,7 @@ export default function CardBag({ product }: CardProps) {
                         <Feather name="plus" color={"white"} size={17} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {(product.price*amount).toFixed(2)}</Text></View>
+                <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {product.amount*product.price}</Text></View>
             </View>
             <ModalInfo name={product.title}/>
             </View>
