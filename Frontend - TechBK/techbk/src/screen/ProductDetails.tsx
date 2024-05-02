@@ -11,8 +11,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 function ProductDetails({ navigation, route }: any) {
   const { product }: any = route.params;
-  const { addProduct } = useContext(TechContext)
-
+  const { addProduct,changeTotal } = useContext(TechContext)
+  
   return (
     <SafeAreaView style={styles.container}>
 
@@ -31,11 +31,12 @@ function ProductDetails({ navigation, route }: any) {
       <View style={{ width: "100%", display: "flex", flexDirection: "row", padding: 10, justifyContent: "space-between", top: 35 }}>
         <Button onPress={() => {
           addProduct(product)
-          
+          changeTotal()
           navigation.navigate("Bag")
         }} width={"48%"} text={'Comprar'} colorText={'white'} size={30} />
         <Button onPress={() => {
           addProduct(product)
+          changeTotal()
           Alert.alert("Produto adicionado no carrinho!",)
         }} width={"48%"} text={'Adicionar ao carrnho'} colorText={'white'} size={30} />
       </View>
