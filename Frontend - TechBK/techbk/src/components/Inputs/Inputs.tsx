@@ -1,7 +1,7 @@
 
 import React from "react";
 import { TextInputProps } from "react-native";
-import { TextInput } from "react-native-gesture-handler";
+import { TextInput } from "react-native";
 import styles from "./styles";
 
 interface InputProps extends TextInputProps {
@@ -15,7 +15,7 @@ interface InputProps extends TextInputProps {
 }
 function Input({ placeholder, bgColor, left, rigth, textColor, bottom, ...rest }: InputProps) {
     return (
-        <TextInput {...rest} placeholder={placeholder} style={[styles.input, { backgroundColor: bgColor, color: textColor, bottom:bottom, left:left, right:rigth }]} placeholderTextColor={textColor} />
+        <TextInput {...rest} placeholder={placeholder} style={[styles.input, { backgroundColor: bgColor, color: textColor, bottom:bottom, left:left, right:rigth, }]} placeholderTextColor={textColor} />
     )
 }
 export default Input;
