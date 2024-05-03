@@ -13,6 +13,7 @@ interface TechContextProps {
   amountProduct:(value:number)=>void;
   changeVisiblePayment: (isVisible:boolean)=>void;
   changeTotal:()=>void
+ 
   
 }
 
@@ -21,13 +22,14 @@ export const TechContext = createContext<TechContextProps>({
   visiblePay: false,
   filter: "",
   bag: [],
-  total:undefined,
+  total:0,
   amountProduct:()=>{},
   changeVisible: () => {},
   findProducts: ()=>{},
   addProduct: ()=>{},
   changeVisiblePayment:()=>{},
-  changeTotal:()=>{}
+  changeTotal:()=>{},
+
 });
 
 interface TechProviderProps {
@@ -54,7 +56,7 @@ function TechBkProvider({ children }: TechProviderProps) {
   function changeVisiblePayment(isVisible:boolean){
     setVisiblePay(isVisible)
   }
-<<<<<<< HEAD
+
   function amountProduct(product:any, amount:number){
    
     bag.findIndex(element => {
@@ -73,18 +75,12 @@ function TechBkProvider({ children }: TechProviderProps) {
       setTotal(totalP)
     }
     bag.forEach(element =>{
-          total = total+=element.price* element.amount;
+          total = total+=(element.price* element.amount);
           setTotal(total)
       })
-=======
-  function amountProduct( value:number){
-          setTotal(value)
 
   
-  
->>>>>>> 2fdd7d1cf315043e2888681e75328e669d83d0cd
-  }
-
+    }
   return (
     <TechContext.Provider value={{visiblePay, total,changeTotal, amountProduct, changeVisiblePayment, addProduct, bag, visible, changeVisible, findProducts, filter }}>
       {children}
