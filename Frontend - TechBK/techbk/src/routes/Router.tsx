@@ -12,6 +12,7 @@ import Register from "../screen/Register";
 import Welcome from "../screen/Welcome";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather } from "@expo/vector-icons";
+import Requests from "../screen/Requests";
 
 const stack = createStackNavigator();
 
@@ -41,6 +42,10 @@ const TabNavigator: React.FC = () => {
                     } else if (route.name === 'ProductList') {
                         color = focused ? '#009898' : "gray";
                         iconName = "home"
+                    }
+                    else if (route.name === 'Requests') {
+                        color = focused ? '#009898' : "gray";
+                        iconName = "list"
                     }
 
                     return <Feather name={iconName} size={20} color={color} />;
@@ -85,6 +90,15 @@ const TabNavigator: React.FC = () => {
 
                 }}
             />
+            <Tab.Screen
+                name="Requests"
+                component={Requests}
+                options={{
+                    tabBarLabel: 'Requests',
+
+
+                }}
+            />
 
         </Tab.Navigator>
     );
@@ -105,6 +119,7 @@ function StachNav() {
             <stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
             <stack.Screen name="Bag" component={Bag} options={{ headerShown: false }} />
             <stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+            <stack.Screen name="Requests" component={Requests} options={{ headerShown: false }} />
             <stack.Screen name="ProductDetails" component={ProductDetails} options={{ headerShown: false }} />
         </stack.Navigator>
 
