@@ -51,7 +51,7 @@ export default function CardBag({ product }: CardProps) {
                         <Feather name="plus" color={"white"} size={17} />
                     </TouchableOpacity>
                 </View>
-                <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {product.amount*product.price}</Text></View>
+                <View style={{ width: "60%", alignItems: "flex-end",  }}><Text style={[stylesGlobal.text, { color: "#009898" }]}>R$ {(product.amount*product.price).toFixed(2)}</Text></View>
             </View>
             <ModalInfo name={product.title}/>
             </View>
