@@ -14,7 +14,7 @@ interface CardProps{
 export default function CardBag({ product }: CardProps) {
     const [amount, setAmount] = useState<number>(1);
     const [totalV, setTotal] = useState<number>(product.price);
-    const { changeVisible, total, changeTotal } = useContext(TechContext)
+    const { changeVisible, total, changeTotal, amountProduct } = useContext(TechContext)
     changeTotal(totalV)
     return (
 
@@ -28,13 +28,11 @@ export default function CardBag({ product }: CardProps) {
             
                 <View style={styles.moreOrLess}>
                     <TouchableOpacity onPress={() => {
-                        let amountIn = amount == 1 ? amount : (amount - 1)
+                        let amountIn:number = amount == 1 ? amount : (amount - 1)
                         setAmount(amount == 1 ? amount : (amount - 1))
                         amount == 1 ? changeVisible(true) : changeVisible(false)
-                       
-                        
                         console.log("aaaaaaaaaaa", total)
-                     
+                        amountProduct(product, amountIn)
                         setTotal( amountIn * parseFloat(product.price))
                     }}>
 
@@ -47,7 +45,7 @@ export default function CardBag({ product }: CardProps) {
                         console.log(product.amount)
                         setAmount(amount + 1)
                         setTotal((amount + 1) * parseFloat(product.price))
-                        
+                        amountProduct(product, amount+1)
                     }}>
 
                         <Feather name="plus" color={"white"} size={17} />
