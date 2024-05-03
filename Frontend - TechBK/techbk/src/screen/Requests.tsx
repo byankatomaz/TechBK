@@ -34,7 +34,7 @@ const Requests = () => {
             <View style={[stylesComponent.topheader, { justifyContent: "flex-start" }]}>
                 <Text style={styles.text}>Pedidos feitos</Text>
             </View>
-            <SafeAreaView style={{ height: "69%", width:"99%" }}>
+            <SafeAreaView style={{ height: "69%", width:"95%" }}>
                 <FlatList
                     data={productList}
                     renderItem={({ item }) => (
