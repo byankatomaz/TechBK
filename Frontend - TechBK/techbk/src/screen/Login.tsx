@@ -8,22 +8,22 @@ import stylesInput from "../components/Inputs/styles";
 export const width = Dimensions.get("window").width
 export const height = Dimensions.get("window").height
 
-export default function Login({navigation}:any){
-    
-    return(
-   
-            <View style={styles.container}>
-                <View style={[styles.containerImage, {bottom:0}]}>
-                    <Image source={require("./../../assets/logo.png")} style={[styles.image, {bottom:100}]} />
-                </View>
-                <View style={[stylesInput.containerInput, {bottom:40}]}>
-                    <Input  placeholder={"Digite seu usuario: "} bgColor={"white"}/>
-                    <Input   placeholder={"Digite sua senha: "} bgColor={"white"}/>
-                </View>
-                    <Button size={0} text={"Não possui login? Cadastre-se"} colorText={"white"} onPress={()=> navigation.navigate("Register")} backgroundColor={"transparent"} width={"60%"} top={0}/>
-                <Button size={0} text={"Login"} colorText={"white"}  width={"50%"} top={0} onPress={() => {navigation.navigate("ProductList")}}/>
+export default function Login({ navigation }: any) {
+
+    return (
+
+        <View style={styles.container}>
+            <View style={[styles.containerImage, { bottom: 0 }]}>
+                <Image source={require("./../../assets/logo.png")} style={[styles.image, { bottom: 100 }]} />
             </View>
-      
-    
+            <View style={[stylesInput.containerInput, { bottom: 40 }]}>
+                <Input placeholder={"Digite seu usuario: "} bgColor={"white"} />
+                <Input placeholder={"Digite sua senha: "} bgColor={"white"} />
+            </View>
+            <Button size={0} text={"Não possui login? Cadastre-se"} colorText={"white"} onPress={() => navigation.navigate("Register")} backgroundColor={"transparent"} width={"60%"} top={0} />
+            <Button size={0} text={"Login"} colorText={"white"} width={"50%"} top={0} onPress={() => { navigation.navigate("ProductList") }} />
+        </View>
+
+
     )
 }
