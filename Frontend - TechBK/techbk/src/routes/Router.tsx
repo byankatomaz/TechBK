@@ -14,6 +14,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { Feather } from "@expo/vector-icons";
 import Requests from "../screen/Requests";
 import User from "../screen/User";
+import ProductList from "../screen/ProductList";
 
 const stack = createStackNavigator();
 
@@ -23,7 +24,7 @@ const TabNavigator: React.FC = () => {
     return (
 
         <Tab.Navigator
-
+            
             screenOptions={({ route }) => ({
                 headerShown: false,
 
@@ -75,10 +76,10 @@ const TabNavigator: React.FC = () => {
         >
             <Tab.Screen
                 name="ProductList"
-                component={StachNav}
+                component={ProductList}  
                 options={{
                     tabBarLabel: 'Product List',
-
+                    
                 }}
             />
             <Tab.Screen
@@ -99,12 +100,11 @@ const TabNavigator: React.FC = () => {
 
                 }}
             />
-              <Tab.Screen
+            <Tab.Screen
                 name="User"
                 component={User}
                 options={{
-                    tabBarLabel: 'User',
-
+                    tabBarLabel: 'User'
 
                 }}
             />
@@ -115,25 +115,18 @@ const TabNavigator: React.FC = () => {
 
 
 
-function StachNav() {
+function StackNav() {
 
     return (
-
-
-
-
-        <stack.Navigator>
-             <stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
-            <stack.Screen name="ProductList" component={Home} options={{ headerShown: false }} />
-           
-            <stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
-            <stack.Screen name="Bag" component={Bag} options={{ headerShown: false }} />
+        <stack.Navigator initialRouteName="Welcome">
             <stack.Screen name="Welcome" component={Welcome} options={{ headerShown: false }} />
+            <stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+            <stack.Screen name="Register" component={Register} options={{ headerShown: false }} />
+            <stack.Screen name="Bag" component={Bag} options={{ headerShown: false }} />
+            <stack.Screen name="ProductList" component={TabNavigator} options={{ headerShown: false }} />
             <stack.Screen name="Requests" component={Requests} options={{ headerShown: false }} />
             <stack.Screen name="ProductDetails" component={ProductDetails} options={{ headerShown: false }} />
         </stack.Navigator>
-
-
 
     )
 
@@ -144,7 +137,7 @@ function Router() {
     return (
         <TechBkProvider>
             <NavigationContainer>
-                <TabNavigator />
+                <StackNav />
             </NavigationContainer>
         </TechBkProvider>
     )
