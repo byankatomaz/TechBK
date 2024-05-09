@@ -39,7 +39,31 @@ const styles = StyleSheet.create({
         display: "flex", 
         alignItems: "flex-end", 
         justifyContent: "center"
-    }
+    },
+    confirm:{
+        display:"flex",
+        justifyContent:"center",
+        alignItems:"center",
+        width:"100%",
+        position:"relative",
+        marginTop:45,
+   
+    
+    },
+    cameraOuGalery:{
+        display:"flex",
+        flexDirection:"row",
+        width: 100, 
+        height: 100,
+       justifyContent:"space-between",
+       marginTop:50,
+    },
+    modal:{
+        backgroundColor:'#252525',
+        alignItems:'center',
+        display:'flex',
+        justifyContent:'center'
+    },
 })
 
 export default styles;
