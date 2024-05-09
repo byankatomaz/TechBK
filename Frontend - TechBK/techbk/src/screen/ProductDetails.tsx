@@ -1,11 +1,9 @@
 import { View, Text, Image, Alert } from 'react-native'
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import styles from '../css/global'
-import Product from '../interfaces/Product';
 import TopHeader from '../components/TopHeader/TopHeader';
 import Button from '../components/Button/Button';
 import { TechContext } from '../context/TechBkContext';
-import { NotificationContentInput, scheduleNotificationAsync } from 'expo-notifications';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 
