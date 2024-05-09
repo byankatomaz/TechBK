@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Image, SafeAreaView, Text, TouchableOpacity, View } from "react-native";
-import { FlatList, ScrollView } from "react-native";
+import { FlatList} from "react-native";
 import styles from "../css/global";
 import Product from "../interfaces/Product";
 import TopHeader from "../components/TopHeader/TopHeader";
@@ -16,7 +16,7 @@ export default function ProductList({ navigation }: any) {
 
   useEffect(() => {
 
-    const response = ProductService.getProducts(filter).then(function (response) {
+    ProductService.getProducts(filter).then(function (response) {
       const data = response.map((each: any) => {
         return each
       })
@@ -38,7 +38,7 @@ export default function ProductList({ navigation }: any) {
       </View>
 
       <View style={{ width: '100%', height: '8%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-        <Text style={[styles.text, { fontSize: 18, fontWeight: 'bold', color: "#009898" }]}>R$ {price}</Text>
+        <Text style={[styles.text, { fontSize: 18, fontWeight: 'bold', color: "#009898" }]}>R$ {price?.toFixed(2)}</Text>
       </View>
     </View>
   );
