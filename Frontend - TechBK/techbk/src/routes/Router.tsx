@@ -74,11 +74,12 @@ const TabNavigator: React.FC = () => {
 
 
         >
+           
             <Tab.Screen
                 name="ProductList"
                 component={ProductList}  
                 options={{
-                    tabBarLabel: 'Product List',
+                    tabBarLabel: 'Produtos',
                     
                 }}
             />
@@ -86,7 +87,7 @@ const TabNavigator: React.FC = () => {
                 name="Bag"
                 component={Bag}
                 options={{
-                    tabBarLabel: 'Bag',
+                    tabBarLabel: 'Carrinho',
 
 
                 }}
@@ -95,16 +96,16 @@ const TabNavigator: React.FC = () => {
                 name="Requests"
                 component={Requests}
                 options={{
-                    tabBarLabel: 'Requests',
+                    tabBarLabel: 'Pedidos',
 
 
                 }}
             />
-            <Tab.Screen
+             <Tab.Screen
                 name="User"
                 component={User}
                 options={{
-                    tabBarLabel: 'User'
+                    tabBarLabel: 'Usuário'
 
                 }}
             />
