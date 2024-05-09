@@ -1,6 +1,5 @@
 import React from "react";
 import { Dimensions, Image, View } from "react-native";
-import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Button from "../components/Button/Button";
 import Input from "../components/Inputs/Inputs";
 import styles from "../css/global";
