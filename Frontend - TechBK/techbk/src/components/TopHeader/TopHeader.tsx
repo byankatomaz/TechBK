@@ -31,7 +31,7 @@ const TopHeader: React.FC<TopHeaderProps> = ({ text, icon, typeTopHeader, screen
           <Input
             bgColor="#252525"
             textColor="white"
-            placeholder="Search products:"
+            placeholder="Busque produtos:"
             onChangeText={text => findProducts(text)}
           />
         </View>
