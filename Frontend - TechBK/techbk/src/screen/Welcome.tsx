@@ -13,7 +13,7 @@ export default function Welcome({ navigation }: any) {
                 <Image source={require("../../assets/logo.png")} style={styles.image} />
             </View>
             <View>
-                <Button text={"Bem-vindo(a) ao E-commerce TechBK"} colorText={"white"} onPress={() => navigation.navigate("Login")} size={30} top={100} width={"80%"} />
+                <Button text={"Bem-vindo(a) ao E-commerce TechBK"} iconName={"arrow-right"} colorText={"white"} onPress={() => navigation.navigate("Login")} size={25} top={100} width={"80%"} />
             </View>
         </View>
     )
