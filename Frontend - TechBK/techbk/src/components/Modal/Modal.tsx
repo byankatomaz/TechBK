@@ -3,7 +3,6 @@ import { Modal, View } from 'react-native';
 
 import { TechContext } from '../../context/TechBkContext';
 import Button from '../Button/Button';
-import Product from '../../interfaces/Product';
 import Card from '../Card/Card';
 
 interface ModalProps {
