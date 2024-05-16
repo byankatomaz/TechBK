@@ -86,7 +86,7 @@ const User = () => {
 
 
                     <TouchableOpacity style={{ width: "50%", height: "30%", borderRadius: 200, display: "flex", marginBottom: 12 }} onPress={openModal}>
-                        <View>
+                        <View style={{backgroundColor:"#252525",borderRadius: 200}}>
                             <Image style={{ width: "100%", height: "100%", borderRadius: 200 }} source={{ uri: (isGalleryOrCamera == true ? imageG : imageJ) }} />
                         </View>
                     </TouchableOpacity>
