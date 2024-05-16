@@ -137,6 +137,7 @@ function StackNav() {
 function Router() {
     return (
         <TechBkProvider>
+            <StatusBar/>
             <NavigationContainer>
                 <StackNav />
             </NavigationContainer>
