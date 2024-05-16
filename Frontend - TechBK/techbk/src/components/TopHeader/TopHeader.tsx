@@ -27,7 +27,7 @@ const TopHeader: React.FC<TopHeaderProps> = ({ text, icon, typeTopHeader, screen
   return (
     <View style={styles.topheader}>
       {typeTopHeader ? (
-        <View style={[styles.headers, {top:10}]}>
+        <View style={[styles.headers]}>
           <Input
             bgColor="#252525"
             textColor="white"

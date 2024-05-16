@@ -77,19 +77,20 @@ const User = () => {
                     </View>
                 </View>
             </Modalize>
-            <View style={[stylesComponent.topheader, { justifyContent: "flex-start" }]}>
+            <View style={[stylesComponent.topheader, { justifyContent: "space-between" }]}>
                 <Text style={styles.text}>Usuário</Text>
+                <TouchableOpacity style={{ width: "15%", height: "90%", borderRadius: 200, display: "flex", marginBottom: 12 }} onPress={openModal}>
+                        <View style={{backgroundColor:"#252525",borderRadius: 200}}>
+                            <Image style={{ width: "100%", height: "100%", borderRadius: 200 }} source={{ uri: (isGalleryOrCamera == true ? imageG : imageJ) }} />
+                        </View>
+                    </TouchableOpacity>
             </View>
 
             <ScrollView style={{ width: "100%", height: "100%", marginTop: 90 }}>
                 <SafeAreaView style={{ width: "100%", height: 650, display: "flex", justifyContent: "center", alignItems: "center", }}>
 
 
-                    <TouchableOpacity style={{ width: "50%", height: "30%", borderRadius: 200, display: "flex", marginBottom: 12 }} onPress={openModal}>
-                        <View style={{backgroundColor:"#252525",borderRadius: 200}}>
-                            <Image style={{ width: "100%", height: "100%", borderRadius: 200 }} source={{ uri: (isGalleryOrCamera == true ? imageG : imageJ) }} />
-                        </View>
-                    </TouchableOpacity>
+                   
                     <View style={[stylesInput.containerInput]}>
                         <Input bgColor='white' placeholder={"keven"} />
                         <Input bgColor='white' placeholder={"keven"} />
