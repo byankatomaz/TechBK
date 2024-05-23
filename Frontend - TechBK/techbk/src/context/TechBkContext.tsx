@@ -10,10 +10,11 @@ interface TechContextProps {
   changeVisible: (isVisible: boolean) => void;
   addProduct: (product: Product)=>void;
   findProducts: (product:any)=>void;
-  amountProduct:(value:number)=>void;
+  amountProduct:(product:any, value:number)=>void;
   changeVisiblePayment: (isVisible:boolean)=>void;
-  changeTotal:()=>void
- 
+  changeTotal:()=>void;
+  token:string;
+  loggedIn:(token:string)=>void;
   
 }
 
@@ -29,6 +30,8 @@ export const TechContext = createContext<TechContextProps>({
   addProduct: ()=>{},
   changeVisiblePayment:()=>{},
   changeTotal:()=>{},
+  token:"",
+  loggedIn:()=>{}
 
 });
 
@@ -42,6 +45,7 @@ function TechBkProvider({ children }: TechProviderProps) {
   const [filter, setFilter] = useState<string>("celulares");
   const [bag, setBag] = useState<Product[]>([]);
   const [total, setTotal] = useState<number>(0);
+  const[token, setToken]= useState<string>("")
   
   function changeVisible(isVisible: boolean) {
     setVisible(isVisible);
@@ -81,8 +85,12 @@ function TechBkProvider({ children }: TechProviderProps) {
 
   
     }
+    function loggedIn(token:string){
+      setToken(token)
+    
+    }
   return (
-    <TechContext.Provider value={{visiblePay, total,changeTotal, amountProduct, changeVisiblePayment, addProduct, bag, visible, changeVisible, findProducts, filter }}>
+    <TechContext.Provider value={{visiblePay, total, loggedIn, changeTotal,token, amountProduct, changeVisiblePayment, addProduct, bag, visible, changeVisible, findProducts, filter }}>
       {children}
     </TechContext.Provider>
   );
