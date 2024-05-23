@@ -1,15 +1,15 @@
 import { StyleSheet } from "react-native";
-
+import { width, height } from "../screen/Login";
 const styles = StyleSheet.create({
     container: {
-        height: "100%",
+        height: height,
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: 'black',
         padding: 0,
         margin: 0,
-        width: "100%"
+        width: width
     },
     image: {
         width: "100%",
