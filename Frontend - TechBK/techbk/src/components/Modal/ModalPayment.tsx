@@ -6,6 +6,7 @@ import { TechContext } from '../../context/TechBkContext'
 import Button from '../Button/Button'
 import stylesGlobal from '../../css/global'
 import { styles } from './styles'
+import React from 'react'
 
 
 export default function ModalPayment() {
