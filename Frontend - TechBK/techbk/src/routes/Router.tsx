@@ -7,7 +7,6 @@ import TechBkProvider from "../context/TechBkContext";
 import Bag from "../screen/Bag";
 import Login from "../screen/Login";
 import ProductDetails from "../screen/ProductDetails";
-import Home from "../screen/ProductList";
 import Register from "../screen/Register";
 import Welcome from "../screen/Welcome";
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
