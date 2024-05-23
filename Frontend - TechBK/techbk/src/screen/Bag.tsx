@@ -7,6 +7,7 @@ import Button from '../components/Button/Button';
 import { useContext, useEffect, useState } from 'react';
 import { TechContext } from '../context/TechBkContext';
 import ModalPayment from '../components/Modal/ModalPayment';
+import React from 'react';
 
 
 export default function Bag({ navigation, route }: any) {
